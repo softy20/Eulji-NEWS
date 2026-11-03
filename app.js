@@ -396,11 +396,34 @@ function openSheet(id) {
     ${canOpen ? `<button class="btn primary" data-origin="${n.id}">${n.cat === "festival" ? "위치 보기" : "원문 보기"}${icon("i-ext", "s20")}</button>` : ""}`;
   $("#scrim").classList.add("on"); $("#sheet").classList.add("on");
   document.body.style.overflow = "hidden";
+  sheetPush();
 }
-function closeSheet() {
+/* ───────── 뒤로 가기 ─────────
+   탭 이동과 상세 창 열기를 브라우저 이동 기록에 남긴다 (주소는 그대로).
+   그래서 폰의 뒤로 가기는 사이트를 나가지 않고: 창이 열려 있으면 창을 내리고, 아니면 이전 탭으로 돌아간다. */
+function sheetPush() { // 창이 열릴 때 기록을 한 칸 쌓는다. 이미 창 기록 위라면(창 안에서 내용만 바뀌는 경우) 쌓지 않는다
+  if (!(history.state && history.state.sheet)) history.pushState({ tab: state.tab, sheet: true }, "");
+}
+function hideSheet() { // 화면에서만 창을 내린다
   $("#scrim").classList.remove("on"); $("#sheet").classList.remove("on");
   document.body.style.overflow = "";
 }
+function closeSheet() { // 창 기록이 있으면 뒤로 가서 지우고 (popstate가 창을 내린다), 없으면 바로 내린다
+  if (history.state && history.state.sheet) history.back(); else hideSheet();
+}
+function goTab(t) {
+  state.chip = "전체";
+  if (state.tab !== t) { state.tab = t; history.pushState({ tab: t }, ""); }
+  render(); window.scrollTo({ top: 0 });
+}
+window.addEventListener("popstate", e => {
+  const s = e.state || { tab: "home" };
+  const open = $("#sheet").classList.contains("on");
+  if (!s.sheet && open) hideSheet();
+  if (s.sheet && !open) history.replaceState({ tab: s.tab }, ""); // 앞으로 가기로 창 기록에 닿아도 내용을 되살릴 수 없으니 탭 기록으로 바꾼다
+  const t = s.tab || "home";
+  if (t !== state.tab) { state.tab = t; state.chip = "전체"; render(); window.scrollTo({ top: 0 }); }
+});
 
 let toastT;
 function toast(msg) {
@@ -448,7 +471,7 @@ document.addEventListener("click", e => {
   const og = e.target.closest("[data-origin]");
   if (og) { openOriginal(byId(og.dataset.origin)); return; }
   const t = e.target.closest("[data-tab]");
-  if (t) { state.tab = t.dataset.tab; state.chip = "전체"; render(); window.scrollTo({ top: 0 }); return; }
+  if (t) { goTab(t.dataset.tab); return; }
   const c = e.target.closest("[data-chip]");
   if (c) { state.chip = c.dataset.chip; render(); return; }
   const g = e.target.closest("[data-seg]");
@@ -461,7 +484,7 @@ document.addEventListener("keydown", e => {
   if ((e.key === "Enter" || e.key === " ") && e.target.matches(".row[data-open]")) { e.preventDefault(); openSheet(e.target.dataset.open); }
 });
 $("#scrim").addEventListener("click", closeSheet);
-$("#savedBtn").addEventListener("click", () => { state.tab = state.tab === "saved" ? "home" : "saved"; render(); });
+$("#savedBtn").addEventListener("click", () => goTab(state.tab === "saved" ? "home" : "saved"));
 $("#searchBtn").addEventListener("click", () => {
   const w = $("#searchWrap"); w.classList.toggle("on");
   if (w.classList.contains("on")) $("#q").focus(); else { $("#q").value = ""; state.query = ""; render(); }
@@ -484,4 +507,7 @@ $("#themeBtn").addEventListener("click", () => {
 applyThemeIcon();
 const h = location.hash.slice(1);
 if (["home","school","student","done","festival","saved"].includes(h)) state.tab = h;
+// 이동 기록의 바닥은 항상 홈으로 둔다. 그러면 어느 탭으로 들어와도 뒤로 가기는 홈으로 가고, 홈에서 한 번 더 누르면 사이트를 나간다
+history.replaceState({ tab: "home" }, "");
+if (state.tab !== "home") history.pushState({ tab: state.tab }, "");
 render();

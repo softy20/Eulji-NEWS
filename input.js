@@ -161,8 +161,9 @@
     $("#sheetActions").innerHTML = actions;
     $("#scrim").classList.add("on"); $("#sheet").classList.add("on");
     document.body.style.overflow = "hidden";
+    sheetPush(); // 뒤로 가기로 이 창을 내릴 수 있게 이동 기록에 남긴다
   };
-  const val = id => ($("#" + id).value || "").trim();
+  const val =id => ($("#" + id).value || "").trim();
   const sourceOptions = sel => Object.entries(SOURCES).filter(([k]) => k !== "official")
     .map(([k, s]) => `<option value="${k}" ${k === sel ? "selected" : ""}>${s.name}</option>`).join("");
   const subOptions = (cat, sel) => (cat === "school" ? SCHOOL_SUBS : STUDENT_SUBS)
@@ -233,8 +234,10 @@
     writeJson(SRC_KEY, item.source);
 
     writeList(LOCAL_KEY, [...readList(LOCAL_KEY), item]); // 먼저 이 기기에 보여 준다
-    reloadManual(); state.tab = cat; state.chip = "전체"; render(); window.scrollTo({ top: 0 });
-    closeSheet();
+    reloadManual(); state.tab = cat; state.chip = "전체";
+    // 창 기록을 이 탭의 기록으로 바꿔서, 저장 뒤 뒤로 가기가 꼬이지 않게 한다
+    if (history.state && history.state.sheet) history.replaceState({ tab: cat }, "");
+    hideSheet(); render(); window.scrollTo({ top: 0 });
 
     const gh = getGh();
     if (!gh) { toast("이 기기에만 저장했어요"); return; }
