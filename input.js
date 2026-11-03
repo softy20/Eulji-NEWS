@@ -45,7 +45,12 @@
 
   const STUDENT_RE = /동아리|학생회|총학|부원|새내기|MT|OT|과\s*행사|학회|소모임|소규모|번개|팀플|조별/;
   const SMALL_RE = /소규모|번개|팀플|조별|스터디|소모임/;
-  function guessCat(text) { return STUDENT_RE.test(text.slice(0, 200)) ? "student" : "school"; }
+  const SCHOOL_RE = /비교과|마일리지|공모전|장학|특강|세미나|학사|수강|교수학습|취창업|센터/;
+  // 기본은 학생 소식. 학교 기관 공지처럼 보이는 글(학생 소식 말투가 없고 학교 용어가 있는 글)만 학교 소식으로 추측한다
+  function guessCat(text) {
+    const s = text.slice(0, 200);
+    return !STUDENT_RE.test(s) && SCHOOL_RE.test(s) ? "school" : "student";
+  }
   function guessSub(cat, text) {
     const s = text.slice(0, 300);
     if (cat === "student") {
@@ -68,9 +73,12 @@
   const api = (gh, path) => `https://api.github.com/repos/${gh.repo}${path ? "/" + path : ""}`;
 
   async function fail(r) {
-    if (r.status === 401) return new Error("토큰이 올바르지 않아요");
-    if (r.status === 403 || r.status === 404) return new Error("저장소를 찾지 못했거나 토큰 권한이 부족해요");
-    if (r.status === 409 || r.status === 422) return new Error("저장소가 그 사이에 바뀌었어요");
+    let detail = "";
+    try { detail = (await r.clone().json()).message || ""; } catch (e) {}
+    const tail = ` (${r.status}${detail ? " · " + detail : ""})`; // GitHub이 준 코드와 이유도 같이 보여 준다
+    if (r.status === 401) return new Error("토큰이 올바르지 않아요" + tail);
+    if (r.status === 403 || r.status === 404) return new Error("저장소를 찾지 못했거나 토큰 권한이 부족해요" + tail);
+    if (r.status === 409 || r.status === 422) return new Error("저장소가 그 사이에 바뀌었어요" + tail);
     return new Error(`GitHub 오류 (${r.status})`);
   }
   async function readRemote(gh) {
@@ -160,11 +168,11 @@
   const subOptions = (cat, sel) => (cat === "school" ? SCHOOL_SUBS : STUDENT_SUBS)
     .map(s => `<option ${s === sel ? "selected" : ""}>${s}</option>`).join("");
 
-  let cat = "school";
+  let cat = "student"; // 학교 소식은 크롤러가 가져오니, 직접 추가하는 건 주로 학생 소식이다
   const dirty = new Set();
 
   function openAdd() {
-    cat = "school"; dirty.clear();
+    cat = "student"; dirty.clear();
     const lastSrc = readJson(SRC_KEY, "everytime");
     showSheet(`
       <h3 id="sheetTitle">소식 추가</h3>
@@ -172,11 +180,11 @@
       <label class="lbl" for="mText">글 붙여넣기</label>
       <textarea id="mText" class="field area" rows="5" placeholder="여기에 붙여넣어요"></textarea>
       <div class="seg" id="mCat" style="margin:16px 0 0">
-        <button type="button" data-mcat="school" aria-selected="true">학교 소식</button>
-        <button type="button" data-mcat="student" aria-selected="false">학생 소식</button>
+        <button type="button" data-mcat="school" aria-selected="false">학교 소식</button>
+        <button type="button" data-mcat="student" aria-selected="true">학생 소식</button>
       </div>
       <label class="lbl" for="mSub">분류</label>
-      <select id="mSub" class="field">${subOptions("school")}</select>
+      <select id="mSub" class="field">${subOptions("student")}</select>
       <label class="lbl" for="mTitle">제목</label>
       <input id="mTitle" class="field" autocomplete="off">
       <div class="two">
