@@ -181,23 +181,38 @@ function badgesFor(n, { noDday } = {}) {
   return b.join("");
 }
 
+// 목록에 보여 줄 제목: 맨 앞의 "2026학년도 2학기", "2026-2", "2026년 하반기" 같은 연도·학기 말머리를 뗀다.
+// 보여 주는 용도뿐이라 원래 제목은 그대로 두고(상세 창, 검색), "2026 EU 취업박람회"처럼 행사 이름에 든 연도는 건드리지 않는다.
+const YEAR_PREFIX_RE = /^20\d{2}\s*(?:학년도|년도|년)\s*(?:[12]\s*학기|전기|후기|상반기|하반기)?\s*|^20\d{2}\s*-\s*[12]\s+|^20\d{2}\s+[12]\s*학기\s*/;
+function shortTitle(t) {
+  const m = t.match(/^(\[[^\]]*\]\s*)?([\s\S]*)$/); // 앞의 [말머리]는 남기고 그 뒤에서 뗀다
+  const rest = m[2].replace(YEAR_PREFIX_RE, "");
+  return rest.trim().length >= 4 ? (m[1] || "") + rest : t;
+}
+
 function row(n) {
   const saved = state.saved.has(n.id);
   const done = isDone(n);
-  let right = "";
-  if (n.deadline) right = `<span class="dday ${daysLeft(n.deadline) >= 0 && daysLeft(n.deadline) <= 3 ? "hot" : ""}">${dday(n.deadline)}</span><span class="when">${n.deadline.getMonth()+1}.${n.deadline.getDate()} 마감</span>`;
-  else if (n.date && n.dateEnd) right = `<span class="dday">~${n.dateEnd.getMonth()+1}.${n.dateEnd.getDate()}</span><span class="when">${daysLeft(n.date) > 0 ? "시작 " + (n.date.getMonth()+1) + "." + n.date.getDate() : "진행 중"}</span>`;
-  else if (n.date) right = `<span class="dday">${n.date.getMonth()+1}.${n.date.getDate()}</span><span class="when">${W[n.date.getDay()]}요일</span>`;
-  else if (n.time) right = `<span class="when">${esc(n.time)}</span>`;
-  else if (n.posted) right = `<span class="when">${n.posted.getMonth()+1}.${n.posted.getDate()} 게시</span>`;
-  const sub = n.cat === "festival" ? `${esc(n.place)} · ${esc(n.host)}` : `${esc(n.host)} · ${(SOURCES[n.source] || SOURCES.other).name}`;
+  // 오른쪽에 둘 마감/날짜(dd)와 보조 글(wh). 좁은 화면에서는 제목 아래 한 줄로 합쳐 보여 준다
+  let dd = "", hot = false, wh = "";
+  if (n.deadline) { const k = daysLeft(n.deadline); dd = dday(n.deadline); hot = k >= 0 && k <= 3; wh = `${n.deadline.getMonth()+1}.${n.deadline.getDate()} 마감`; }
+  else if (n.date && n.dateEnd) { dd = `~${n.dateEnd.getMonth()+1}.${n.dateEnd.getDate()}`; wh = daysLeft(n.date) > 0 ? `시작 ${n.date.getMonth()+1}.${n.date.getDate()}` : "진행 중"; }
+  else if (n.date) { dd = `${n.date.getMonth()+1}.${n.date.getDate()}`; wh = `${W[n.date.getDay()]}요일`; }
+  else if (n.time) wh = n.time;
+  else if (n.posted) wh = `${n.posted.getMonth()+1}.${n.posted.getDate()} 게시`;
+  const right = `${dd ? `<span class="dday ${hot ? "hot" : ""}">${esc(dd)}</span>` : ""}<span class="when">${esc(wh)}</span>`;
+  // 크롤링한 글은 전부 공식 홈페이지 것이라 출처를 적지 않고, 에타·인스타 같은 직접 입력 글만 출처를 보여 준다
+  const srcName = n.source === "official" ? "" : (SOURCES[n.source] || SOURCES.other).name;
+  const sub = n.cat === "festival" ? `${esc(n.place)} · ${esc(n.host)}` : [esc(n.host), srcName].filter(Boolean).join(" · ");
+  const mline = [dd ? `<b class="dday ${hot ? "hot" : ""}">${esc(dd)}</b>` : "", wh ? esc(wh) : "", sub].filter(Boolean).join(" · ");
+  const bd = n.mileage || n.prize ? badgesFor(n, { noDday: true }) : ""; // 마일리지·상금 배지
   // 아이콘 칸이 곧 '신청 완료' 버튼이다. 누르면 진분홍으로 바뀐다 (축전 부스는 해당 없음)
   const avatar = n.cat === "festival" ? `<span class="avatar">${icon(n.icon)}</span>` :
     `<button class="avatar" data-done="${n.id}" role="checkbox" aria-checked="${done}" aria-label="신청 완료 표시">${icon(n.icon)}</button>`;
   return `<div class="row${done && state.tab !== "done" ? " is-done" : ""}" role="button" tabindex="0" data-open="${n.id}">
     ${avatar}
-    <span class="body"><span class="ttl">${esc(n.title)}</span><span class="sub">${sub}</span>
-      ${n.mileage || n.prize ? `<span class="badges" style="margin-top:4px">${badgesFor(n, { noDday: true })}</span>` : ""}</span>
+    <span class="body"><span class="ttl">${esc(shortTitle(n.title))}</span><span class="sub">${sub}</span><span class="mline"><span class="mtxt">${mline}</span>${bd ? `<span class="mbadges">${bd}</span>` : ""}</span>
+      ${bd ? `<span class="badges" style="margin-top:4px">${bd}</span>` : ""}</span>
     <span class="right">${right}</span>
     <button class="save-btn" data-save="${n.id}" aria-pressed="${saved}" aria-label="${saved ? "저장 취소" : "저장"}">${icon("i-bookmark", "s20")}</button>
   </div>`;
@@ -260,7 +275,7 @@ function viewHome() {
     ${urgent.length ? `<div class="carousel">${urgent.map(n => `
       <button class="u-card" data-open="${n.id}">
         <span class="badges">${badgesFor(n)}</span>
-        <span class="ttl">${esc(n.title)}</span>
+        <span class="ttl">${esc(shortTitle(n.title))}</span>
         <span class="meta">${esc(n.host)}<br>${fmt(n.deadline)}까지</span>
       </button>`).join("")}</div>` : emptyBlock("급하게 챙길 소식이 없어요", "여유롭게 둘러봐도 괜찮아요")}
   </section>
