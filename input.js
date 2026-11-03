@@ -64,7 +64,8 @@
   const hdr = gh => ({ Authorization: `Bearer ${gh.token}`, Accept: "application/vnd.github+json" });
   const b64enc = s => { let bin = ""; new TextEncoder().encode(s).forEach(c => (bin += String.fromCharCode(c))); return btoa(bin); };
   const b64dec = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g, "")), c => c.charCodeAt(0)));
-  const api = (gh, path) => `https://api.github.com/repos/${gh.repo}/${path}`;
+  // 경로가 비면 슬래시를 붙이지 않는다 (끝에 /가 붙으면 GitHub API가 404로 답한다)
+  const api = (gh, path) => `https://api.github.com/repos/${gh.repo}${path ? "/" + path : ""}`;
 
   async function fail(r) {
     if (r.status === 401) return new Error("토큰이 올바르지 않아요");
