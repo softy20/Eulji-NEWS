@@ -77,23 +77,62 @@ reloadManual();
 
 /* ───────── State ───────── */
 const state = { tab: "home", chip: "전체", festSeg: "booth", query: "", saved: new Set(), done: new Map(), hideDone: true };
-try { JSON.parse(localStorage.getItem("eulji-saved") || "[]").forEach(id => state.saved.add(String(id))); } catch (e) {}
-const persist = () => { try { localStorage.setItem("eulji-saved", JSON.stringify([...state.saved])); } catch (e) {} };
-
-// 신청 완료: id → 그 글의 사본. 학교 게시판에서 글이 내려가거나 마감이 지나도 '신청 완료' 탭에는 남도록 사본을 같이 저장한다.
-// 이 기기의 브라우저에만 저장된다 (폰과 PC는 따로).
-try { Object.entries(JSON.parse(localStorage.getItem("eulji-done") || "{}")).forEach(([id, s]) => state.done.set(id, s)); } catch (e) {}
+// '신청 완료 숨기기' 스위치는 기기마다 따로 둔다 (동기화하지 않는다)
 try { if (localStorage.getItem("eulji-hide-done") === "0") state.hideDone = false; } catch (e) {}
-const persistDone = () => {
-  try {
-    localStorage.setItem("eulji-done", JSON.stringify(Object.fromEntries(state.done)));
-    localStorage.setItem("eulji-hide-done", state.hideDone ? "1" : "0");
-  } catch (e) {}
-};
+const persistHide = () => { try { localStorage.setItem("eulji-hide-done", state.hideDone ? "1" : "0"); } catch (e) {} };
+
+/* ───────── 신청 완료·저장(북마크), 폰·PC 동기화 ─────────
+   항목마다 { on, at } 을 두고 '나중에 한 동작'(at이 큰 쪽)이 이긴다.
+   체크를 푼 것도 on:false 로 남겨야 다른 기기에서도 풀린다.
+   done 항목에는 글 사본(s)도 같이 둔다: 학교 게시판에서 글이 내려가거나 마감이 지나도 '신청 완료' 탭에는 남도록.
+   GitHub 연결이 있으면 input.js 가 data/state.js 로 주고받는다. 연결이 없으면 이 기기에만 저장된다. */
+const SYNC_KEY = "eulji-sync";
+let sync = { done: {}, saved: {} };
+function mergeSync(a, b) {
+  const out = { done: {}, saved: {} };
+  for (const k of ["done", "saved"]) {
+    for (const src of [(a && a[k]) || {}, (b && b[k]) || {}]) {
+      for (const [id, e] of Object.entries(src)) {
+        const cur = out[k][id];
+        if (!cur || (e.at || 0) > (cur.at || 0)) out[k][id] = e;
+      }
+    }
+  }
+  return out;
+}
+function pruneSync(s) { // 풀어 둔 지 90일 넘은 기록은 정리한다
+  const limit = Date.now() - 90 * DAY;
+  for (const k of ["done", "saved"]) for (const [id, e] of Object.entries(s[k])) if (!e.on && (e.at || 0) < limit) delete s[k][id];
+  return s;
+}
+function deriveState() {
+  state.saved = new Set(Object.entries(sync.saved).filter(([, e]) => e.on).map(([id]) => id));
+  state.done = new Map(Object.entries(sync.done).filter(([, e]) => e.on).map(([id, e]) => [id, e.s]));
+}
+const saveSyncLocal = () => { try { localStorage.setItem(SYNC_KEY, JSON.stringify(sync)); } catch (e) {} };
+// 다른 곳(GitHub)에서 받은 기록을 합친다. 이 기기 기록이 바뀌었으면 true
+function applyRemote(remote) {
+  const merged = pruneSync(mergeSync(sync, remote));
+  const changed = JSON.stringify(merged) !== JSON.stringify(sync);
+  sync = merged; deriveState(); saveSyncLocal();
+  return changed;
+}
+function markChanged() { saveSyncLocal(); deriveState(); if (window.syncSoon) window.syncSoon(); }
+const setDone = (n, on) => { sync.done[n.id] = on ? { on: true, at: Date.now(), s: snapOf(n) } : { on: false, at: Date.now() }; markChanged(); };
+const setSaved = (id, on) => { sync.saved[id] = { on, at: Date.now() }; markChanged(); };
+
+try { sync = JSON.parse(localStorage.getItem(SYNC_KEY) || "null"); } catch (e) { sync = null; }
+if (!sync) { // 예전 방식(이 기기에만 저장)에서 옮겨 온다
+  sync = { done: {}, saved: {} };
+  try { JSON.parse(localStorage.getItem("eulji-saved") || "[]").forEach(id => { sync.saved[String(id)] = { on: true, at: 1 }; }); } catch (e) {}
+  try { Object.entries(JSON.parse(localStorage.getItem("eulji-done") || "{}")).forEach(([id, s]) => { sync.done[id] = { on: true, at: 1, s }; }); } catch (e) {}
+}
+applyRemote(window.USER_STATE); // 배포된 data/state.js (다른 기기에서 한 것)
+
 const ymdS = d => d ? `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}` : undefined;
 const snapOf = n => ({
   id: n.id, cat: n.cat, sub: n.sub, icon: n.icon, title: n.title, host: n.host, source: n.source, campus: n.campus,
-  place: n.place, mileage: n.mileage, desc: n.desc, link: n.link, manual: n.manual,
+  place: n.place, mileage: n.mileage, desc: n.desc ? n.desc.slice(0, 300) : undefined, link: n.link, manual: n.manual,
   deadline: ymdS(n.deadline), date: ymdS(n.date), dateEnd: ymdS(n.dateEnd), posted: ymdS(n.posted),
 });
 const fromSnap = s => ({ ...s, deadline: parseDay(s.deadline), date: parseDay(s.date), dateEnd: parseDay(s.dateEnd), posted: parseDay(s.posted) });
@@ -155,12 +194,13 @@ function row(n) {
   else if (n.time) right = `<span class="when">${esc(n.time)}</span>`;
   else if (n.posted) right = `<span class="when">${n.posted.getMonth()+1}.${n.posted.getDate()} 게시</span>`;
   const sub = n.cat === "festival" ? `${esc(n.place)} · ${esc(n.host)}` : `${esc(n.host)} · ${SOURCES[n.source].name}`;
-  const chk = n.cat === "festival" ? "" :
-    `<button class="chk" data-done="${n.id}" role="checkbox" aria-checked="${done}"><span class="box">${icon("i-check", "s16")}</span>신청 완료</button>`;
+  // 아이콘 칸이 곧 '신청 완료' 버튼이다. 누르면 진분홍으로 바뀐다 (축전 부스는 해당 없음)
+  const avatar = n.cat === "festival" ? `<span class="avatar">${icon(n.icon)}</span>` :
+    `<button class="avatar" data-done="${n.id}" role="checkbox" aria-checked="${done}" aria-label="신청 완료 표시">${icon(n.icon)}</button>`;
   return `<div class="row${done && state.tab !== "done" ? " is-done" : ""}" role="button" tabindex="0" data-open="${n.id}">
-    <span class="avatar">${icon(n.icon)}</span>
+    ${avatar}
     <span class="body"><span class="ttl">${esc(n.title)}</span><span class="sub">${sub}</span>
-      ${n.mileage || n.prize ? `<span class="badges" style="margin-top:4px">${badgesFor(n, { noDday: true })}</span>` : ""}${chk}</span>
+      ${n.mileage || n.prize ? `<span class="badges" style="margin-top:4px">${badgesFor(n, { noDday: true })}</span>` : ""}</span>
     <span class="right">${right}</span>
     <button class="save-btn" data-save="${n.id}" aria-pressed="${saved}" aria-label="${saved ? "저장 취소" : "저장"}">${icon("i-bookmark", "s20")}</button>
   </div>`;
@@ -385,16 +425,16 @@ function openOriginal(n) {
 
 function toggleDone(id) {
   const n = byId(id); if (!n) return;
-  if (state.done.has(id)) { state.done.delete(id); toast("신청 완료 표시를 풀었어요"); }
-  else { state.done.set(id, snapOf(n)); toast("신청 완료로 표시했어요"); }
-  persistDone(); render();
+  if (state.done.has(id)) { setDone(n, false); toast("신청 완료 표시를 풀었어요"); }
+  else { setDone(n, true); toast("신청 완료로 표시했어요"); }
+  render();
   if ($("#sheet").classList.contains("on")) { if (byId(id)) openSheet(id); else closeSheet(); }
 }
 
 function toggleSave(id) {
-  if (state.saved.has(id)) { state.saved.delete(id); toast("저장을 취소했어요"); }
-  else { state.saved.add(id); toast("저장했어요"); }
-  persist(); render();
+  if (state.saved.has(id)) { setSaved(id, false); toast("저장을 취소했어요"); }
+  else { setSaved(id, true); toast("저장했어요"); }
+  render();
   if ($("#sheet").classList.contains("on")) openSheet(id);
 }
 
@@ -405,7 +445,7 @@ document.addEventListener("click", e => {
   const dn = e.target.closest("[data-done]");
   if (dn) { e.stopPropagation(); toggleDone(dn.dataset.done); return; }
   const hd = e.target.closest("[data-hidedone]");
-  if (hd) { state.hideDone = !state.hideDone; persistDone(); render(); return; }
+  if (hd) { state.hideDone = !state.hideDone; persistHide(); render(); return; }
   const del = e.target.closest("[data-delete]");
   if (del) { window.deleteManual && window.deleteManual(del.dataset.delete); return; }
   const og = e.target.closest("[data-origin]");

@@ -98,6 +98,54 @@
     }
   }
 
+  /* ───────── 신청 완료·저장 동기화 (data/state.js) ─────────
+     이 기기의 기록(sync)과 GitHub의 기록을 합쳐서 양쪽에 반영한다. 합치는 규칙은 app.js 의 mergeSync (나중에 한 동작이 이김). */
+  const STATE_PATH = "data/state.js";
+  async function readFile(gh, path) {
+    const r = await fetch(api(gh, `contents/${path}?ref=${encodeURIComponent(gh.branch)}`), { headers: hdr(gh), cache: "no-store" });
+    if (r.status === 404) return { text: "", sha: undefined };
+    if (!r.ok) throw await fail(r);
+    const j = await r.json();
+    return { text: b64dec(j.content), sha: j.sha };
+  }
+  async function writeFile(gh, path, text, sha, message) {
+    const body = { message, branch: gh.branch, content: b64enc(text) };
+    if (sha) body.sha = sha;
+    const r = await fetch(api(gh, `contents/${path}`), { method: "PUT", headers: { ...hdr(gh), "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    if (!r.ok) throw await fail(r);
+  }
+  function parseState(text) {
+    try {
+      const a = text.indexOf("{"), z = text.lastIndexOf("}");
+      const s = JSON.parse(text.slice(a, z + 1));
+      return { done: s.done || {}, saved: s.saved || {} };
+    } catch (e) { return { done: {}, saved: {} }; }
+  }
+  const serializeState = s => `// 신청 완료·저장 동기화 파일이에요. 페이지가 갱신해요.\nwindow.USER_STATE = ${JSON.stringify(s)};\n`;
+
+  let pushing = false, again = false, timer;
+  window.syncSoon = () => { clearTimeout(timer); timer = setTimeout(() => pushState(false), 1500); }; // 연달아 체크해도 한 번에 보낸다
+  async function pushState(silent) {
+    const gh = getGh(); if (!gh) return;
+    if (pushing) { again = true; return; }
+    pushing = true;
+    try {
+      for (let attempt = 0; ; attempt++) {
+        const { text, sha } = await readFile(gh, STATE_PATH);
+        const remote = parseState(text);
+        const out = pruneSync(mergeSync(remote, sync));              // 이 기기 기록을 GitHub 기록에 합친다
+        const changed = applyRemote(remote);                         // GitHub에서 바뀐 것도 이 기기에 반영한다
+        if (JSON.stringify(out) !== JSON.stringify(remote)) {
+          try { await writeFile(gh, STATE_PATH, serializeState(out), sha, "신청 완료·저장 동기화"); }
+          catch (e) { if (attempt >= 1 || !/바뀌었어요/.test(e.message)) throw e; continue; }
+        }
+        if (changed) render();
+        break;
+      }
+    } catch (e) { if (!silent) toast(`동기화하지 못했어요. ${e.message}`); }
+    finally { pushing = false; if (again) { again = false; window.syncSoon(); } }
+  }
+
   /* ───────── 시트 ───────── */
   const showSheet = (html, actions) => {
     $("#sheetContent").innerHTML = html;
@@ -229,7 +277,7 @@
       const j = await r.json();
       if (j.permissions && j.permissions.push === false) throw new Error("쓰기 권한이 없는 토큰이에요");
       writeJson(GH_KEY, gh);
-      toast("연결했어요"); openAdd();
+      toast("연결했어요"); openAdd(); pushState(true);
     } catch (e) { toast(e.message); }
   }
 
@@ -249,4 +297,6 @@
     if (/^m(Title|Deadline|Date|Place|Mileage|Desc|Sub)$/.test(id)) dirty.add(id === "mSub" ? "sub" : id);
   });
   $("#sheet").addEventListener("change", e => { if (e.target.id === "mSub") dirty.add("sub"); });
+
+  pushState(true); // 열 때마다 GitHub의 최신 기록을 받고, 아직 못 보낸 것이 있으면 보낸다
 })();

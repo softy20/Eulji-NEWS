@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<meta name="theme-color" content="#FFF3F7">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>을지소식</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -70,27 +71,28 @@
 <!-- 일러스트: 축전 (yellow→orange는 토스가 허용하는 일러스트 그라디언트) -->
 <template id="festArt">
   <svg viewBox="0 0 56 56" class="art" aria-hidden="true">
-    <defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFDD78"/><stop offset="1" stop-color="#FF9F2E"/></linearGradient></defs>
+    <defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD9E6"/><stop offset="1" stop-color="#F29BBC"/></linearGradient></defs>
     <path d="M28 6 L48 44 H8 Z" fill="url(#fg)"/>
-    <path d="M28 6 V44" stroke="#9A4A1F" stroke-width="2" opacity=".35"/>
-    <path d="M28 6 L28 1" stroke="#FFC342" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M28 1 l9 3 -9 3" fill="#F04452"/>
-    <path d="M22 44 Q28 30 34 44 Z" fill="#7A3A17" opacity=".75"/>
-    <circle cx="10" cy="14" r="2.5" fill="#FFC342"/><circle cx="47" cy="18" r="2" fill="#FFDD78"/><circle cx="44" cy="8" r="1.5" fill="#FFC342"/>
+    <path d="M28 6 V44" stroke="#8A3355" stroke-width="2" opacity=".35"/>
+    <path d="M28 6 L28 1" stroke="#F29BBC" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M28 1 l9 3 -9 3" fill="#E0457F"/>
+    <path d="M22 44 Q28 30 34 44 Z" fill="#6B2A45" opacity=".75"/>
+    <circle cx="10" cy="14" r="2.5" fill="#F29BBC"/><circle cx="47" cy="18" r="2" fill="#FFD9E6"/><circle cx="44" cy="8" r="1.5" fill="#F29BBC"/>
   </svg>
 </template>
 <template id="emptyArt">
   <svg viewBox="0 0 72 72" class="art" aria-hidden="true">
-    <defs><linearGradient id="eg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFDD78"/><stop offset="1" stop-color="#FFB13A"/></linearGradient></defs>
+    <defs><linearGradient id="eg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE0EB"/><stop offset="1" stop-color="#F7B0C9"/></linearGradient></defs>
     <rect x="16" y="8" width="40" height="54" rx="10" fill="url(#eg)"/>
-    <path d="M28 62 L36 54 L44 62" fill="#E89322"/>
-    <circle cx="29" cy="30" r="2.5" fill="#5C2C12"/><circle cx="43" cy="30" r="2.5" fill="#5C2C12"/>
-    <path d="M31 38 q5 4 10 0" stroke="#5C2C12" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M28 62 L36 54 L44 62" fill="#EE8FB0"/>
+    <circle cx="29" cy="30" r="2.5" fill="#5B2A40"/><circle cx="43" cy="30" r="2.5" fill="#5B2A40"/>
+    <path d="M31 38 q5 4 10 0" stroke="#5B2A40" stroke-width="2.4" fill="none" stroke-linecap="round"/>
   </svg>
 </template>
 
 <script src="data/notices.js"></script>
 <script src="data/manual.js"></script>
+<script src="data/state.js"></script>
 <script src="app.js"></script>
 <script src="input.js"></script>
 </body>
