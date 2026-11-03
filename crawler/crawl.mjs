@@ -24,6 +24,8 @@ const CMS_BOARDS = [
   { key: "innov",   host: "대학혁신지원사업단", list: "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006" },
   { key: "aac",     host: "전공설계지원센터", list: "https://eulji.ac.kr/aac/index.html?menuno=7191" },
   { key: "liberal", host: "교양학부",         list: "https://liberal.eulji.ac.kr/?menuno=3273" },
+  // 다른 게시판과 같은 글이 겹치면 앞쪽 게시판 것이 남으므로 맨 뒤에 둔다
+  { key: "acad",    host: "학사 공지",        list: "https://eulji.ac.kr/renewal/index.html?menuno=3160", defaultSub: "학사" },
 ];
 const LIB = { key: "lib", host: "학술정보원", list: "https://lib.eulji.ac.kr/eul/community/sc.csp?sccode=eulnotice", view: "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=" };
 
@@ -112,7 +114,7 @@ function extract(title, text, posted) {
 
   // 행사 일시
   const when = lines.find(l => /^(일\s*시|행사\s*일시|교육\s*일시|일\s*정|기\s*간)\s*[:：]/.test(l.replace(/^[^\w가-힣]+/, "")));
-  if (when) { const ds = datesIn(when, posted); if (ds.length) info.date = ds[0]; }
+  if (when) { const ds = datesIn(when, posted); if (ds.length) { info.date = ds[0]; if (ds.length > 1 && ds[ds.length - 1] !== ds[0]) info.dateEnd = ds[ds.length - 1]; } }
 
   // 장소
   const place = lines.map(l => l.replace(/^[^\w가-힣]+/, "")).find(l => /^장\s*소\s*[:：]/.test(l));
@@ -121,6 +123,16 @@ function extract(title, text, posted) {
   // 마일리지 / 포인트
   const mi = text.match(/(마일리지|비교과\s*포인트|EU\s*포인트|포인트)[^\d\n]{0,12}(\d{1,3})\s*(점|포인트|P|p)/);
   if (mi) info.mileage = +mi[2];
+
+  // "시작일 ~ 종료일" 기간. 강의평가처럼 '마감'이라는 말 없이 기간만 적힌 글에 쓴다 (1차·2차처럼 여러 개일 수 있다)
+  const periods = [];
+  for (const l of lines) {
+    const k = l.search(/[~∼～]/);
+    if (k < 0) continue;
+    const left = datesIn(l.slice(0, k), posted), right = datesIn(l.slice(k + 1), posted);
+    if (left.length && right.length) periods.push({ start: left[left.length - 1], end: right[0] });
+  }
+  if (periods.length) info.periods = periods;
 
   return info;
 }
@@ -177,7 +189,8 @@ async function crawlCms(board, known) {
 
     const prev = known.get(id);
     if (prev && prev.text !== undefined) {
-      Object.assign(item, pick(prev));
+      // 이미 받은 본문은 다시 요청하지 않고, 저장된 본문에서 정보만 다시 뽑는다 (추출 규칙을 고치면 바로 반영돼요)
+      Object.assign(item, { text: prev.text, ...extract(r.title, prev.text, r.date) });
     } else if (detailCount < MAX_DETAIL_PER_BOARD) {
       detailCount++;
       await sleep(DELAY_MS);
@@ -190,7 +203,7 @@ async function crawlCms(board, known) {
         log(`   ! 본문 실패 ${id}: ${e.message}`);
       }
     }
-    item.sub = classify(item.title, item.text || "");
+    item.sub = board.defaultSub || classify(item.title, item.text || "");
     out.push(item);
   }
   return out;
@@ -215,7 +228,7 @@ async function crawlLib(known) {
       campus, pinned: false, link: { url: LIB.view + encodeURIComponent(key), method: "GET" },
     };
     const prev = known.get(id);
-    if (prev && prev.text !== undefined) Object.assign(item, pick(prev));
+    if (prev && prev.text !== undefined) Object.assign(item, { text: prev.text, ...extract(title, prev.text, date) });
     else if (detailCount < MAX_DETAIL_PER_BOARD) {
       detailCount++;
       await sleep(DELAY_MS);
@@ -235,7 +248,6 @@ async function crawlLib(known) {
   return out;
 }
 
-const pick = p => ({ text: p.text, deadline: p.deadline, date: p.date, place: p.place, mileage: p.mileage });
 
 /* ───────── main ───────── */
 async function loadPrevious() {
@@ -277,10 +289,17 @@ try {
   log(`  실패: ${e.message} (이전 ${kept.length}개 유지)`);
 }
 
-// 여러 게시판에 같은 글이 올라오는 경우(예: 인권센터 글을 혁신사업단이 재게시)를 하나로 합친다
-const seen = new Set();
+// 여러 게시판에 같은 글이 올라오는 경우(예: 진로취창업센터 글을 혁신사업단이 며칠 뒤 재게시)를 하나로 합친다.
+// 제목이 같고 게시일 차이가 14일 이내면 같은 글로 보고, 먼저 올라온 원본만 남긴다.
 const norm = s => s.replace(/\s+/g, "").replace(/^\[[^\]]*\]/, "");
-const unique = all.filter(n => { const k = norm(n.title) + n.posted; if (seen.has(k)) return false; seen.add(k); return true; });
+const keptByTitle = new Map(); // 제목 → 남긴 글들의 게시일
+const unique = [...all].sort((a, b) => a.posted.localeCompare(b.posted)).filter(n => {
+  const k = norm(n.title), t = new Date(n.posted);
+  const dup = (keptByTitle.get(k) || []).some(d => Math.abs(t - d) / 864e5 <= 14);
+  if (dup) return false;
+  keptByTitle.set(k, [...(keptByTitle.get(k) || []), t]);
+  return true;
+});
 all.length = 0; all.push(...unique);
 
 all.sort((a, b) => b.posted.localeCompare(a.posted));

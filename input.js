@@ -43,11 +43,16 @@
     return out;
   }
 
-  const STUDENT_RE = /동아리|학생회|총학|부원|새내기|MT|OT|과\s*행사|학회|소모임/;
+  const STUDENT_RE = /동아리|학생회|총학|부원|새내기|MT|OT|과\s*행사|학회|소모임|소규모|번개|팀플|조별/;
+  const SMALL_RE = /소규모|번개|팀플|조별|스터디|소모임/;
   function guessCat(text) { return STUDENT_RE.test(text.slice(0, 200)) ? "student" : "school"; }
   function guessSub(cat, text) {
     const s = text.slice(0, 300);
-    if (cat === "student") return /총학|학생회/.test(s) ? "학생회" : /모집|지원|부원|신입/.test(s) ? "동아리 모집" : "동아리 행사";
+    if (cat === "student") {
+      if (/총학|학생회/.test(s)) return "학생회";
+      if (!/동아리/.test(s) && SMALL_RE.test(s)) return "소규모 행사"; // 동아리 글이 아니고 조별과제·스터디 같은 모임이면
+      return /모집|지원|부원|신입/.test(s) ? "동아리 모집" : "동아리 행사";
+    }
     if (/공모전|경진대회|대회|챌린지|콘테스트/.test(s)) return "공모전";
     if (/장학|지원금|교환학생|연수|파견/.test(s)) return "장학·지원";
     if (/비교과|마일리지|특강|캠프|프로그램|워크숍|세미나|교육|멘토링|박람회/.test(s)) return "비교과·프로그램";

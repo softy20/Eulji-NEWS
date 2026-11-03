@@ -27,13 +27,20 @@ const FEST_NOTICES = []; // { title, sub, when }
 /* ───────── 공식 홈페이지 크롤링 데이터 (data/notices.js) ─────────
    학교 소식(cat: "school")으로 넣는다. */
 const parseDay = s => { if (!s) return undefined; const [y, m, dd] = s.split("-").map(Number); return new Date(y, m - 1, dd); };
-const BOARD_ICON = { job: "i-brief", ctl: "i-cap", intl: "i-globe", counsel: "i-heart", innov: "i-zap", aac: "i-target", lib: "i-book", liberal: "i-cap" };
-const SCHOOL_SUBS = ["비교과·프로그램", "공모전", "장학·지원", "일반 공지"];
+const BOARD_ICON = { job: "i-brief", ctl: "i-cap", intl: "i-globe", counsel: "i-heart", innov: "i-zap", aac: "i-target", lib: "i-book", liberal: "i-cap", acad: "i-cal" };
+const SCHOOL_SUBS = ["학사", "비교과·프로그램", "공모전", "장학·지원", "일반 공지"];
+// 기간이 여러 개(1차·2차)면 아직 안 끝난 것 중 가장 가까운 끝나는 날을, 모두 끝났으면 마지막 날을 마감으로 본다
+function pickDeadline(c) {
+  if (c.deadline) return parseDay(c.deadline);
+  const ends = (c.periods || []).map(p => p.end).sort();
+  if (!ends.length) return undefined;
+  return parseDay(ends.find(e => parseDay(e) >= TODAY) || ends[ends.length - 1]);
+}
 if (Array.isArray(window.CRAWLED) && window.CRAWLED.length) {
   const crawled = window.CRAWLED.map(c => ({
     id: c.id, cat: "school", sub: c.sub, icon: BOARD_ICON[c.board] || "i-mega",
     title: c.title, host: c.host, source: "official", campus: c.campus,
-    deadline: parseDay(c.deadline), date: parseDay(c.date), posted: parseDay(c.posted),
+    deadline: pickDeadline(c), date: parseDay(c.date), dateEnd: parseDay(c.dateEnd), posted: parseDay(c.posted),
     place: c.place, mileage: c.mileage, desc: c.text, link: c.link,
   }));
   NEWS.splice(0, NEWS.length, ...crawled, ...NEWS.filter(n => n.cat !== "school"));
@@ -43,8 +50,8 @@ BOOTHS.forEach(b => { b.id = String(b.id); });
 
 /* ───────── 직접 입력한 소식 ─────────
    data/manual.js(GitHub에 저장된 것) + 이 기기에만 있는 것(아직 동기화 전) + 삭제 표시를 합친다. */
-const STUDENT_SUBS = ["동아리 행사", "동아리 모집", "학생회"];
-const MANUAL_ICON = { "비교과·프로그램": "i-zap", "공모전": "i-trophy", "장학·지원": "i-globe", "일반 공지": "i-mega", "동아리 행사": "i-music", "동아리 모집": "i-heart", "학생회": "i-mega" };
+const STUDENT_SUBS = ["동아리 행사", "동아리 모집", "학생회", "소규모 행사"];
+const MANUAL_ICON = { "비교과·프로그램": "i-zap", "공모전": "i-trophy", "장학·지원": "i-globe", "일반 공지": "i-mega", "동아리 행사": "i-music", "동아리 모집": "i-heart", "학생회": "i-mega", "소규모 행사": "i-users" };
 const LOCAL_KEY = "eulji-manual-local", DEL_KEY = "eulji-manual-del";
 const readList = k => { try { return JSON.parse(localStorage.getItem(k) || "[]"); } catch (e) { return []; } };
 const writeList = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
@@ -69,9 +76,27 @@ function reloadManual() {
 reloadManual();
 
 /* ───────── State ───────── */
-const state = { tab: "home", chip: "전체", festSeg: "booth", query: "", saved: new Set() };
+const state = { tab: "home", chip: "전체", festSeg: "booth", query: "", saved: new Set(), done: new Map(), hideDone: true };
 try { JSON.parse(localStorage.getItem("eulji-saved") || "[]").forEach(id => state.saved.add(String(id))); } catch (e) {}
 const persist = () => { try { localStorage.setItem("eulji-saved", JSON.stringify([...state.saved])); } catch (e) {} };
+
+// 신청 완료: id → 그 글의 사본. 학교 게시판에서 글이 내려가거나 마감이 지나도 '신청 완료' 탭에는 남도록 사본을 같이 저장한다.
+// 이 기기의 브라우저에만 저장된다 (폰과 PC는 따로).
+try { Object.entries(JSON.parse(localStorage.getItem("eulji-done") || "{}")).forEach(([id, s]) => state.done.set(id, s)); } catch (e) {}
+try { if (localStorage.getItem("eulji-hide-done") === "0") state.hideDone = false; } catch (e) {}
+const persistDone = () => {
+  try {
+    localStorage.setItem("eulji-done", JSON.stringify(Object.fromEntries(state.done)));
+    localStorage.setItem("eulji-hide-done", state.hideDone ? "1" : "0");
+  } catch (e) {}
+};
+const ymdS = d => d ? `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}` : undefined;
+const snapOf = n => ({
+  id: n.id, cat: n.cat, sub: n.sub, icon: n.icon, title: n.title, host: n.host, source: n.source, campus: n.campus,
+  place: n.place, mileage: n.mileage, desc: n.desc, link: n.link, manual: n.manual,
+  deadline: ymdS(n.deadline), date: ymdS(n.date), dateEnd: ymdS(n.dateEnd), posted: ymdS(n.posted),
+});
+const fromSnap = s => ({ ...s, deadline: parseDay(s.deadline), date: parseDay(s.date), dateEnd: parseDay(s.dateEnd), posted: parseDay(s.posted) });
 
 /* ───────── Helpers ───────── */
 const $ = s => document.querySelector(s);
@@ -81,15 +106,26 @@ const fmt = dt => `${dt.getMonth()+1}월 ${dt.getDate()}일(${W[dt.getDay()]})`;
 const daysLeft = dt => Math.round((dt - TODAY) / DAY);
 const dday = dt => { const n = daysLeft(dt); return n === 0 ? "오늘 마감" : n > 0 ? `D-${n}` : "마감"; };
 const icon = (id, cls = "") => `<svg class="i ${cls}"><use href="#${id}"/></svg>`;
-const allItems = () => [...NEWS, ...BOOTHS.map(b => ({ ...b, cat: "festival", sub: b.type, source: "everytime" }))];
+// 목록에서 내려간 글도 신청 완료한 것이면 사본으로 되살려서 함께 돌려준다
+const allItems = () => {
+  const live = [...NEWS, ...BOOTHS.map(b => ({ ...b, cat: "festival", sub: b.type, source: "everytime" }))];
+  const ids = new Set(live.map(x => x.id));
+  return [...live, ...[...state.done].filter(([id]) => !ids.has(id)).map(([, s]) => fromSnap(s))];
+};
 const byId = id => allItems().find(x => x.id === String(id));
+const isDone = n => state.done.has(n.id);
+const shown = n => !(state.hideDone && isDone(n));   // '신청 완료 숨기기'가 켜져 있으면 완료한 글을 목록에서 뺀다
 // 마감이 지났거나, 행사가 끝났거나, 마감·일시 없이 30일 넘은 글은 숨긴다
 // 모집·신청이 아닌 "결과 발표"류 글은 숨긴다 (합격자·수상자·선정 결과 등)
 const RESULT_RE = /결과|합격자|수상자|당첨자|선정자|명단|(참여자|참가자|팀) ?발표/;
+// 중요한 학사 안내는 날짜 정보가 없어도 오래 보여 준다 (제목에 이 말이 들어 있으면). 마감이 지나면 숨긴다.
+// 더 오래 보고 싶은 글이 있으면 여기에 단어를 추가한다.
+const ALWAYS_SHOW_RE = /강의 ?평가|추가 ?학기|계절 ?학기/;
 const alive = n => {
   if (RESULT_RE.test(n.title)) return false;
   if (n.deadline) return daysLeft(n.deadline) >= 0;
-  if (n.date) return daysLeft(n.date) >= 0;
+  if (n.date) return daysLeft(n.dateEnd || n.date) >= 0;
+  if (ALWAYS_SHOW_RE.test(n.title)) return true;
   return !n.posted || -daysLeft(n.posted) <= 30;
 };
 // 마감 있는 글은 마감 빠른 순, 나머지는 최신순
@@ -103,7 +139,7 @@ const matchQ = n => !state.query || [n.title, n.host, n.sub, n.place].join(" ").
 
 function badgesFor(n, { noDday } = {}) {
   const b = [];
-  if (n.deadline && !noDday) { const k = daysLeft(n.deadline); b.push(`<span class="badge ${k <= 3 ? "danger" : ""}">${dday(n.deadline)}</span>`); }
+  if (n.deadline && !noDday) { const k = daysLeft(n.deadline); b.push(`<span class="badge ${k >= 0 && k <= 3 ? "danger" : ""}">${dday(n.deadline)}</span>`); }
   if (n.mileage) b.push(`<span class="badge brand">마일리지 ${n.mileage}점</span>`);
   if (n.prize) b.push(`<span class="badge">${esc(n.prize)}</span>`);
   return b.join("");
@@ -111,19 +147,30 @@ function badgesFor(n, { noDday } = {}) {
 
 function row(n) {
   const saved = state.saved.has(n.id);
+  const done = isDone(n);
   let right = "";
-  if (n.deadline) right = `<span class="dday ${daysLeft(n.deadline) <= 3 ? "hot" : ""}">${dday(n.deadline)}</span><span class="when">${n.deadline.getMonth()+1}.${n.deadline.getDate()} 마감</span>`;
+  if (n.deadline) right = `<span class="dday ${daysLeft(n.deadline) >= 0 && daysLeft(n.deadline) <= 3 ? "hot" : ""}">${dday(n.deadline)}</span><span class="when">${n.deadline.getMonth()+1}.${n.deadline.getDate()} 마감</span>`;
+  else if (n.date && n.dateEnd) right = `<span class="dday">~${n.dateEnd.getMonth()+1}.${n.dateEnd.getDate()}</span><span class="when">${daysLeft(n.date) > 0 ? "시작 " + (n.date.getMonth()+1) + "." + n.date.getDate() : "진행 중"}</span>`;
   else if (n.date) right = `<span class="dday">${n.date.getMonth()+1}.${n.date.getDate()}</span><span class="when">${W[n.date.getDay()]}요일</span>`;
   else if (n.time) right = `<span class="when">${esc(n.time)}</span>`;
   else if (n.posted) right = `<span class="when">${n.posted.getMonth()+1}.${n.posted.getDate()} 게시</span>`;
   const sub = n.cat === "festival" ? `${esc(n.place)} · ${esc(n.host)}` : `${esc(n.host)} · ${SOURCES[n.source].name}`;
-  return `<div class="row" role="button" tabindex="0" data-open="${n.id}">
+  const chk = n.cat === "festival" ? "" :
+    `<button class="chk" data-done="${n.id}" role="checkbox" aria-checked="${done}"><span class="box">${icon("i-check", "s16")}</span>신청 완료</button>`;
+  return `<div class="row${done && state.tab !== "done" ? " is-done" : ""}" role="button" tabindex="0" data-open="${n.id}">
     <span class="avatar">${icon(n.icon)}</span>
     <span class="body"><span class="ttl">${esc(n.title)}</span><span class="sub">${sub}</span>
-      ${n.mileage || n.prize ? `<span class="badges" style="margin-top:4px">${badgesFor(n, { noDday: true })}</span>` : ""}</span>
+      ${n.mileage || n.prize ? `<span class="badges" style="margin-top:4px">${badgesFor(n, { noDday: true })}</span>` : ""}${chk}</span>
     <span class="right">${right}</span>
     <button class="save-btn" data-save="${n.id}" aria-pressed="${saved}" aria-label="${saved ? "저장 취소" : "저장"}">${icon("i-bookmark", "s20")}</button>
   </div>`;
+}
+
+// '신청 완료한 소식 숨기기' 스위치 (켜고 끌 수 있고, 마지막 상태를 기억한다)
+function doneFilter() {
+  const n = state.done.size;
+  return `<div class="filter-row"><span>신청 완료한 소식 숨기기${n ? `<em>${n}</em>` : ""}</span>
+    <button class="sw" role="switch" aria-checked="${state.hideDone}" data-hidedone aria-label="신청 완료한 소식 숨기기"></button></div>`;
 }
 
 function emptyBlock(t, s) {
@@ -139,7 +186,7 @@ function chipsBar(items, list) {
 
 /* ───────── Tabs ───────── */
 function tabsDef() {
-  const t = [["home","홈"],["school","학교 소식"],["student","학생 소식"]];
+  const t = [["home","홈"],["school","학교 소식"],["student","학생 소식"],["done","신청 완료"]];
   if (FESTIVAL.active) t.push(["festival","을지축전"]);
   return t;
 }
@@ -147,12 +194,12 @@ function renderTabs() {
   const el = $("#tabs");
   if (state.tab === "saved") { el.innerHTML = `<button class="tab" aria-selected="true" role="tab">저장한 소식</button><button class="tab" data-tab="home" role="tab">돌아가기</button>`; return; }
   el.innerHTML = tabsDef().map(([k, v]) =>
-    `<button class="tab" role="tab" data-tab="${k}" aria-selected="${state.tab === k}">${v}${k === "festival" ? `<span class="limited">기간 한정</span>` : ""}</button>`).join("");
+    `<button class="tab" role="tab" data-tab="${k}" aria-selected="${state.tab === k}">${v}${k === "done" && state.done.size ? `<span class="tabn">${state.done.size}</span>` : ""}${k === "festival" ? `<span class="limited">기간 한정</span>` : ""}</button>`).join("");
 }
 
 /* ───────── Views ───────── */
 function viewHome() {
-  const live = NEWS.filter(alive).filter(matchQ);
+  const live = NEWS.filter(alive).filter(matchQ).filter(shown);
   const urgent = live.filter(n => n.deadline && daysLeft(n.deadline) <= 7).sort((a, b) => a.deadline - b.deadline);
   const latest = [...live].sort((a, b) => b.posted - a.posted).slice(0, 6);
   const weekCnt = urgent.length;
@@ -183,6 +230,7 @@ function viewHome() {
 
   <section class="section">
     <div class="sec-head"><div class="sec-title">새로 올라온 소식</div><button class="text-btn" data-tab="school">전체보기${icon("i-chev","s16")}</button></div>
+    ${doneFilter()}
     <div class="list">${latest.map(row).join("") || emptyBlock("검색 결과가 없어요", "다른 단어로 찾아볼까요")}</div>
   </section>
 
@@ -203,13 +251,14 @@ function crawledAgo() {
 
 function viewCategory(cat) {
   const subs = cat === "school" ? SCHOOL_SUBS : STUDENT_SUBS;
-  const base = NEWS.filter(n => n.cat === cat).filter(alive).filter(matchQ);
+  const base = NEWS.filter(n => n.cat === cat).filter(alive).filter(matchQ).filter(shown);
   const list = base.filter(n => state.chip === "전체" || n.sub === state.chip)
     .sort(byUrgency);
   const title = cat === "school" ? "학교 소식" : "학생 소식";
-  const sub = cat === "school" ? "학교 기관 공지 게시판 8곳에서 모았어요" : "동아리 행사와 모집, 학생회 소식이에요";
+  const sub = cat === "school" ? "학교 기관 공지 게시판 9곳에서 모았어요" : "동아리, 학생회, 조별 모임 같은 소규모 행사 소식이에요";
   return `<section class="section">
     <div class="sec-head"><div><div class="sec-title">${title}</div><div class="sec-sub">${sub}</div></div></div>
+    ${doneFilter()}
     ${chipsBar(subs, base)}
     <div class="list">${list.map(row).join("") || emptyBlock("아직 올라온 소식이 없어요", "오른쪽 아래 + 버튼으로 소식을 추가해 보세요")}</div>
   </section>`;
@@ -251,6 +300,16 @@ function viewFestival() {
   </section>`;
 }
 
+// 신청 완료한 소식 모아보기. 마감이 지난 것도 보이고, 지난 것은 아래로 보낸다
+function viewDone() {
+  const past = n => (n.deadline && daysLeft(n.deadline) < 0) || (!n.deadline && n.date && daysLeft(n.dateEnd || n.date) < 0);
+  const list = allItems().filter(isDone).filter(matchQ).sort((a, b) => past(a) - past(b) || byUrgency(a, b));
+  return `<section class="section">
+    <div class="sec-head"><div><div class="sec-title">신청 완료</div><div class="sec-sub">${list.length ? `${list.length}개를 신청했어요` : "체크한 소식이 여기에 모여요"}</div></div></div>
+    <div class="list">${list.map(row).join("") || emptyBlock("신청 완료한 소식이 없어요", "소식에서 '신청 완료'를 체크하면 여기에 모여요")}</div>
+  </section>`;
+}
+
 function viewSaved() {
   const list = [...state.saved].map(byId).filter(Boolean);
   return `<section class="section">
@@ -265,7 +324,8 @@ function render() {
   m.innerHTML = `<div class="view">${
     state.tab === "home" ? viewHome() :
     state.tab === "festival" ? viewFestival() :
-    state.tab === "saved" ? viewSaved() : viewCategory(state.tab)
+    state.tab === "saved" ? viewSaved() :
+    state.tab === "done" ? viewDone() : viewCategory(state.tab)
   }</div>`;
   const dot = $("#savedDot");
   dot.hidden = !state.saved.size; dot.textContent = state.saved.size;
@@ -277,7 +337,7 @@ function openSheet(id) {
   const saved = state.saved.has(n.id);
   const rows = [];
   if (n.deadline) rows.push(["i-clock", "마감", `${fmt(n.deadline)} · ${dday(n.deadline)}`]);
-  if (n.date) rows.push(["i-cal", "일시", fmt(n.date)]);
+  if (n.date) rows.push(["i-cal", n.dateEnd ? "기간" : "일시", n.dateEnd ? `${fmt(n.date)} ~ ${fmt(n.dateEnd)}` : fmt(n.date)]);
   if (n.time) rows.push(["i-clock", "운영", n.time]);
   if (n.place) rows.push(["i-pin", "장소", n.place]);
   if (n.mileage) rows.push(["i-zap", "혜택", `마일리지 ${n.mileage}점`]);
@@ -290,7 +350,8 @@ function openSheet(id) {
     <h3 id="sheetTitle">${esc(n.title)}</h3>
     <div class="sec-sub" style="margin-top:4px">${esc(n.host)}</div>
     <p class="desc">${esc(n.desc || "")}</p>
-    <div class="info">${rows.map(([ic, k, v]) => `<div class="info-row"><span class="k">${icon(ic, "s16")}${k}</span><span class="v">${esc(v)}</span></div>`).join("")}</div>`;
+    <div class="info">${rows.map(([ic, k, v]) => `<div class="info-row"><span class="k">${icon(ic, "s16")}${k}</span><span class="v">${esc(v)}</span></div>`).join("")}</div>
+    ${n.cat === "festival" ? "" : `<button class="done-row" data-done="${n.id}" role="checkbox" aria-checked="${isDone(n)}"><span>신청 완료했어요</span><span class="box">${icon("i-check", "s16")}</span></button>`}`;
   const canOpen = n.cat === "festival" || n.link;
   $("#sheetActions").innerHTML = `
     <button class="btn secondary" data-save="${n.id}" aria-pressed="${saved}">${saved ? "저장됨" : "저장"}</button>
@@ -322,6 +383,14 @@ function openOriginal(n) {
   document.body.appendChild(f); f.submit(); f.remove();
 }
 
+function toggleDone(id) {
+  const n = byId(id); if (!n) return;
+  if (state.done.has(id)) { state.done.delete(id); toast("신청 완료 표시를 풀었어요"); }
+  else { state.done.set(id, snapOf(n)); toast("신청 완료로 표시했어요"); }
+  persistDone(); render();
+  if ($("#sheet").classList.contains("on")) { if (byId(id)) openSheet(id); else closeSheet(); }
+}
+
 function toggleSave(id) {
   if (state.saved.has(id)) { state.saved.delete(id); toast("저장을 취소했어요"); }
   else { state.saved.add(id); toast("저장했어요"); }
@@ -333,6 +402,10 @@ function toggleSave(id) {
 document.addEventListener("click", e => {
   const s = e.target.closest("[data-save]");
   if (s) { e.stopPropagation(); toggleSave(s.dataset.save); return; }
+  const dn = e.target.closest("[data-done]");
+  if (dn) { e.stopPropagation(); toggleDone(dn.dataset.done); return; }
+  const hd = e.target.closest("[data-hidedone]");
+  if (hd) { state.hideDone = !state.hideDone; persistDone(); render(); return; }
   const del = e.target.closest("[data-delete]");
   if (del) { window.deleteManual && window.deleteManual(del.dataset.delete); return; }
   const og = e.target.closest("[data-origin]");
@@ -373,5 +446,5 @@ $("#themeBtn").addEventListener("click", () => {
 });
 applyThemeIcon();
 const h = location.hash.slice(1);
-if (["home","school","student","festival","saved"].includes(h)) state.tab = h;
+if (["home","school","student","done","festival","saved"].includes(h)) state.tab = h;
 render();

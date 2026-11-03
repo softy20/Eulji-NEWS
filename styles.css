@@ -282,3 +282,23 @@ select.field { appearance: none; background-image: url("data:image/svg+xml,%3Csv
 input[type="date"].field { min-width: 0; }
 .help { margin-top: 16px; padding: 14px 16px; border-radius: 14px; background: var(--fill-weaker); border: 1px solid var(--line); font-size: 13px; line-height: 1.6; color: var(--text-2); }
 .sheet .actions:not(:has(.primary)) .btn { flex: 1; }
+
+/* ───────── 신청 완료 (체크박스 · 숨기기 스위치 · 탭 개수) ───────── */
+.box { width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--text-4); background: var(--surface); display: grid; place-items: center; flex: none; color: transparent; transition: background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease); }
+.box svg.i { stroke-width: 3; }
+[aria-checked="true"] > .box { background: var(--brand); border-color: var(--brand); color: #fff; }
+.chk { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; margin-top: 2px; padding: 6px 14px 6px 0; font-size: 13px; font-weight: 600; color: var(--text-3); }
+.chk .box { width: 20px; height: 20px; border-radius: 6px; }
+.chk[aria-checked="true"] { color: var(--brand-text); }
+.row.is-done .avatar, .row.is-done .ttl { opacity: .45; }
+.done-row { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 16px; padding: 16px 18px; border-radius: 16px; background: var(--fill-weaker); border: 1px solid var(--line); font-size: 16px; font-weight: 600; transition: background .2s var(--ease); }
+.done-row:active { background: var(--press); }
+.done-row[aria-checked="true"] { background: var(--brand-weak); border-color: transparent; color: var(--brand-text); }
+.filter-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 4px 24px 12px; font-size: 14px; font-weight: 600; color: var(--text-2); }
+.filter-row em { font-style: normal; font-weight: 600; font-size: 12px; color: var(--text-3); background: var(--fill-weak); padding: 1px 7px; border-radius: 999px; margin-left: 8px; }
+.sw { position: relative; width: 44px; height: 26px; border-radius: 999px; background: var(--text-4); flex: none; transition: background .2s var(--ease); }
+.sw::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(2,32,71,.2); transition: transform .2s var(--ease); }
+.sw[aria-checked="true"] { background: var(--brand); }
+.sw[aria-checked="true"]::after { transform: translateX(18px); }
+.tab .tabn { font-size: 12px; font-weight: 700; color: var(--brand-text); background: var(--brand-weak); min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; display: inline-grid; place-items: center; line-height: 1; }
+@media (max-width: 380px) { .filter-row { padding-left: 20px; padding-right: 20px; } }
