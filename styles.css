@@ -62,7 +62,7 @@ svg.i.s20 { width: 20px; height: 20px; }
 svg.i.s16 { width: 16px; height: 16px; stroke-width: 1.8; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
-.app { max-width: 640px; margin: 0 auto; min-height: 100vh; padding-bottom: 48px; }
+.app { max-width: 640px; margin: 0 auto; min-height: 100vh; padding-bottom: 96px; }
 
 /* ───────── Top app bar ───────── */
 .top {
@@ -72,7 +72,7 @@ svg.i.s16 { width: 16px; height: 16px; stroke-width: 1.8; }
 }
 .bar { height: 56px; display: flex; align-items: center; gap: 4px; padding: 0 12px 0 20px; }
 .logo { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-right: auto; }
-.logo-mark { width: 28px; height: 28px; border-radius: 9px; background: var(--brand); display: grid; place-items: center; color: #fff; font-size: 14px; font-weight: 800; letter-spacing: -0.04em; }
+.logo-mark { width: 28px; height: 28px; border-radius: 50%; background: #fff; object-fit: cover; flex: none; display: block; }
 .icon-btn { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: var(--text-2); transition: background .2s var(--ease); position: relative; }
 .icon-btn:hover { background: var(--press); }
 .icon-btn .dot { position: absolute; top: 9px; right: 9px; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 999px; background: var(--brand); color: #fff; font-size: 10px; font-weight: 700; display: grid; place-items: center; line-height: 1; }
@@ -263,3 +263,22 @@ main { padding: 12px 12px 0; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0s !important; animation-duration: 0s !important; }
 }
+
+/* ───────── 소식 추가 (FAB + 입력 폼) ───────── */
+.fab { position: fixed; z-index: 30; right: max(20px, calc(50% - 300px)); bottom: calc(24px + env(safe-area-inset-bottom)); width: 56px; height: 56px; border-radius: 20px; background: var(--brand); color: #fff; display: grid; place-items: center; box-shadow: var(--shadow-3); transition: transform .12s var(--ease), filter .12s var(--ease); }
+.fab:hover { filter: brightness(.95); }
+.fab:active { transform: scale(.94); }
+.fab svg.i { width: 26px; height: 26px; stroke-width: 2; }
+.lbl { display: block; font-size: 13px; font-weight: 600; color: var(--text-3); margin: 16px 0 6px; }
+.lbl .opt { font-weight: 500; color: var(--text-4); margin-left: 4px; }
+.field { display: block; width: 100%; min-height: 48px; border-radius: 12px; border: 1px solid transparent; background: var(--fill-weak); color: var(--text-1); font: inherit; font-size: 16px; padding: 0 14px; outline: none; transition: border-color .2s var(--ease), background .2s var(--ease); }
+.field:focus { background: var(--surface); border: 1.5px solid var(--brand); padding: 0 13.5px; }
+.field::placeholder { color: var(--text-4); }
+textarea.field { padding: 12px 14px; line-height: 1.5; resize: vertical; }
+textarea.field:focus { padding: 11.5px 13.5px; }
+select.field { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238B95A1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.two > div { min-width: 0; }
+input[type="date"].field { min-width: 0; }
+.help { margin-top: 16px; padding: 14px 16px; border-radius: 14px; background: var(--fill-weaker); border: 1px solid var(--line); font-size: 13px; line-height: 1.6; color: var(--text-2); }
+.sheet .actions:not(:has(.primary)) .btn { flex: 1; }

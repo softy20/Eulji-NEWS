@@ -8,6 +8,8 @@ const SOURCES = {
   everytime: { name: "에브리타임", icon: "i-msg" },
   kakaowork: { name: "카카오워크", icon: "i-work" },
   dept: { name: "학과 단톡", icon: "i-users" },
+  instagram: { name: "인스타그램", icon: "i-camera" },
+  other: { name: "기타", icon: "i-pin" },
 };
 
 // 기간 한정 카테고리: 축제 기간에만 active: true 로 켜고 날짜를 넣는다
@@ -39,6 +41,33 @@ if (Array.isArray(window.CRAWLED) && window.CRAWLED.length) {
 NEWS.forEach(n => { n.id = String(n.id); });
 BOOTHS.forEach(b => { b.id = String(b.id); });
 
+/* ───────── 직접 입력한 소식 ─────────
+   data/manual.js(GitHub에 저장된 것) + 이 기기에만 있는 것(아직 동기화 전) + 삭제 표시를 합친다. */
+const STUDENT_SUBS = ["동아리 행사", "동아리 모집", "학생회"];
+const MANUAL_ICON = { "비교과·프로그램": "i-zap", "공모전": "i-trophy", "장학·지원": "i-globe", "일반 공지": "i-mega", "동아리 행사": "i-music", "동아리 모집": "i-heart", "학생회": "i-mega" };
+const LOCAL_KEY = "eulji-manual-local", DEL_KEY = "eulji-manual-del";
+const readList = k => { try { return JSON.parse(localStorage.getItem(k) || "[]"); } catch (e) { return []; } };
+const writeList = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+
+function manualToNews(m) {
+  return {
+    id: m.id, cat: m.cat, sub: m.sub, icon: MANUAL_ICON[m.sub] || "i-mega", title: m.title, host: m.host || "",
+    source: SOURCES[m.source] ? m.source : "other", deadline: parseDay(m.deadline), date: parseDay(m.date),
+    posted: parseDay(m.posted), place: m.place, mileage: m.mileage, desc: m.desc, link: m.link, manual: true,
+  };
+}
+function reloadManual() {
+  const synced = Array.isArray(window.MANUAL) ? window.MANUAL : [];
+  const syncedIds = new Set(synced.map(m => m.id));
+  const del = new Set(readList(DEL_KEY));
+  writeList(DEL_KEY, [...del].filter(id => syncedIds.has(id)));            // 배포에서 사라진 삭제 표시는 정리
+  const local = readList(LOCAL_KEY).filter(m => !syncedIds.has(m.id));     // 배포에 반영된 로컬 글은 정리
+  writeList(LOCAL_KEY, local);
+  for (let i = NEWS.length - 1; i >= 0; i--) if (NEWS[i].manual) NEWS.splice(i, 1);
+  NEWS.push(...[...synced.filter(m => !del.has(m.id)), ...local].map(manualToNews));
+}
+reloadManual();
+
 /* ───────── State ───────── */
 const state = { tab: "home", chip: "전체", festSeg: "booth", query: "", saved: new Set() };
 try { JSON.parse(localStorage.getItem("eulji-saved") || "[]").forEach(id => state.saved.add(String(id))); } catch (e) {}
@@ -52,8 +81,8 @@ const fmt = dt => `${dt.getMonth()+1}월 ${dt.getDate()}일(${W[dt.getDay()]})`;
 const daysLeft = dt => Math.round((dt - TODAY) / DAY);
 const dday = dt => { const n = daysLeft(dt); return n === 0 ? "오늘 마감" : n > 0 ? `D-${n}` : "마감"; };
 const icon = (id, cls = "") => `<svg class="i ${cls}"><use href="#${id}"/></svg>`;
-const ALL = [...NEWS, ...BOOTHS.map(b => ({ ...b, cat: "festival", sub: b.type, source: "everytime" }))];
-const byId = id => ALL.find(x => x.id === String(id));
+const allItems = () => [...NEWS, ...BOOTHS.map(b => ({ ...b, cat: "festival", sub: b.type, source: "everytime" }))];
+const byId = id => allItems().find(x => x.id === String(id));
 // 마감이 지났거나, 행사가 끝났거나, 마감·일시 없이 30일 넘은 글은 숨긴다
 // 모집·신청이 아닌 "결과 발표"류 글은 숨긴다 (합격자·수상자·선정 결과 등)
 const RESULT_RE = /결과|합격자|수상자|당첨자|선정자|명단|(참여자|참가자|팀) ?발표/;
@@ -173,7 +202,7 @@ function crawledAgo() {
 }
 
 function viewCategory(cat) {
-  const subs = cat === "school" ? SCHOOL_SUBS : ["동아리 행사", "동아리 모집", "학생회"];
+  const subs = cat === "school" ? SCHOOL_SUBS : STUDENT_SUBS;
   const base = NEWS.filter(n => n.cat === cat).filter(alive).filter(matchQ);
   const list = base.filter(n => state.chip === "전체" || n.sub === state.chip)
     .sort(byUrgency);
@@ -182,7 +211,7 @@ function viewCategory(cat) {
   return `<section class="section">
     <div class="sec-head"><div><div class="sec-title">${title}</div><div class="sec-sub">${sub}</div></div></div>
     ${chipsBar(subs, base)}
-    <div class="list">${list.map(row).join("") || emptyBlock("아직 올라온 소식이 없어요", "새 소식이 생기면 여기에 보여드릴게요")}</div>
+    <div class="list">${list.map(row).join("") || emptyBlock("아직 올라온 소식이 없어요", "오른쪽 아래 + 버튼으로 소식을 추가해 보세요")}</div>
   </section>`;
 }
 
@@ -262,9 +291,11 @@ function openSheet(id) {
     <div class="sec-sub" style="margin-top:4px">${esc(n.host)}</div>
     <p class="desc">${esc(n.desc || "")}</p>
     <div class="info">${rows.map(([ic, k, v]) => `<div class="info-row"><span class="k">${icon(ic, "s16")}${k}</span><span class="v">${esc(v)}</span></div>`).join("")}</div>`;
+  const canOpen = n.cat === "festival" || n.link;
   $("#sheetActions").innerHTML = `
     <button class="btn secondary" data-save="${n.id}" aria-pressed="${saved}">${saved ? "저장됨" : "저장"}</button>
-    <button class="btn primary" data-origin="${n.id}">${n.cat === "festival" ? "위치 보기" : "원문 보기"}${icon("i-ext", "s20")}</button>`;
+    ${n.manual ? `<button class="btn secondary" data-delete="${n.id}">삭제</button>` : ""}
+    ${canOpen ? `<button class="btn primary" data-origin="${n.id}">${n.cat === "festival" ? "위치 보기" : "원문 보기"}${icon("i-ext", "s20")}</button>` : ""}`;
   $("#scrim").classList.add("on"); $("#sheet").classList.add("on");
   document.body.style.overflow = "hidden";
 }
@@ -302,6 +333,8 @@ function toggleSave(id) {
 document.addEventListener("click", e => {
   const s = e.target.closest("[data-save]");
   if (s) { e.stopPropagation(); toggleSave(s.dataset.save); return; }
+  const del = e.target.closest("[data-delete]");
+  if (del) { window.deleteManual && window.deleteManual(del.dataset.delete); return; }
   const og = e.target.closest("[data-origin]");
   if (og) { openOriginal(byId(og.dataset.origin)); return; }
   const t = e.target.closest("[data-tab]");
