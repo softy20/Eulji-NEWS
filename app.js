@@ -6,12 +6,9 @@ const TODAY = new Date(); TODAY.setHours(0,0,0,0);
 const SOURCES = {
   official: { name: "공식 홈페이지", icon: "i-globe" },
   everytime: { name: "에브리타임", icon: "i-msg" },
-  kakaowork: { name: "카카오워크", icon: "i-work" },
-  dept: { name: "학과 단톡", icon: "i-users" },
   instagram: { name: "인스타그램", icon: "i-camera" },
   other: { name: "기타", icon: "i-pin" },
 };
-
 // 기간 한정 카테고리: 축제 기간에만 active: true 로 켜고 날짜를 넣는다
 // 예) { active: true, name: "2027 을지축전", start: new Date(2027, 4, 20), end: new Date(2027, 4, 22) }
 const FESTIVAL = { active: false, name: "을지축전", start: TODAY, end: TODAY };
@@ -193,7 +190,7 @@ function row(n) {
   else if (n.date) right = `<span class="dday">${n.date.getMonth()+1}.${n.date.getDate()}</span><span class="when">${W[n.date.getDay()]}요일</span>`;
   else if (n.time) right = `<span class="when">${esc(n.time)}</span>`;
   else if (n.posted) right = `<span class="when">${n.posted.getMonth()+1}.${n.posted.getDate()} 게시</span>`;
-  const sub = n.cat === "festival" ? `${esc(n.place)} · ${esc(n.host)}` : `${esc(n.host)} · ${SOURCES[n.source].name}`;
+  const sub = n.cat === "festival" ? `${esc(n.place)} · ${esc(n.host)}` : `${esc(n.host)} · ${(SOURCES[n.source] || SOURCES.other).name}`;
   // 아이콘 칸이 곧 '신청 완료' 버튼이다. 누르면 진분홍으로 바뀐다 (축전 부스는 해당 없음)
   const avatar = n.cat === "festival" ? `<span class="avatar">${icon(n.icon)}</span>` :
     `<button class="avatar" data-done="${n.id}" role="checkbox" aria-checked="${done}" aria-label="신청 완료 표시">${icon(n.icon)}</button>`;
@@ -383,7 +380,7 @@ function openSheet(id) {
   if (n.mileage) rows.push(["i-zap", "혜택", `마일리지 ${n.mileage}점`]);
   if (n.prize) rows.push(["i-trophy", "상금", n.prize]);
   if (n.campus) rows.push(["i-pin", "캠퍼스", n.campus]);
-  rows.push(["i-msg", "출처", n.source === "official" ? `${n.host} 공지` : SOURCES[n.source].name]);
+  rows.push(["i-msg", "출처", n.source === "official" ? `${n.host} 공지` : (SOURCES[n.source] || SOURCES.other).name]);
 
   $("#sheetContent").innerHTML = `
     <div class="badges"><span class="badge">${esc(n.sub)}</span>${badgesFor(n)}</div>
