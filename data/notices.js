@@ -1,7 +1,31 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-03T16:44:46.659Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":14},"innov":{"ok":true,"count":8},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":12},"lib":{"ok":true,"count":8}};
+window.CRAWLED_AT = "2026-11-04T04:37:52.516Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":14},"innov":{"ok":true,"count":9},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":12},"lib":{"ok":true,"count":8}};
 window.CRAWLED = [
+ {
+  "id": "innov-1332",
+  "source": "official",
+  "board": "innov",
+  "host": "대학혁신지원사업단",
+  "title": "[대학혁신지원사업단] 2026년 을지대학교 대학혁신지원사업 뉴스레터 발간 안내",
+  "posted": "2026-11-04",
+  "pinned": true,
+  "link": {
+   "url": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "1332",
+    "siteno": "283",
+    "no": "1999",
+    "page": "1",
+    "ztag": "rO0ABXQANzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTk5OSIgc2tpbj0ibm90aWNlX2lubm8iPjwvY2FsbD4="
+   }
+  },
+  "list": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
+  "text": "안녕하십니까.\n을지대학교 대학혁신지원사업단입니다.\n2026년 대학혁신지원사업의 주요 추진 활동과 성과를 공유하고자\n「을지대학교 대학혁신지원사업 2026 뉴스레터」를 발간하였습니다.\n이번 뉴스레터에는 대학혁신지원사업단 소개를 비롯하여\n각 분야별 주요 프로그램 운영 현황과 추진 성과 등을 담았습니다.\n대학 구성원 여러분의 많은 관심 부탁드립니다.\n감사합니다.",
+  "sub": "비교과·프로그램"
+ },
  {
   "id": "acad-1088",
   "source": "official",
