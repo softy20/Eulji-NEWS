@@ -449,7 +449,10 @@ function toast(msg) {
 // 학교 CMS 게시판은 글 주소가 없고 POST로만 열려서, 숨은 폼을 만들어 새 탭으로 보낸다
 function openOriginal(n) {
   if (!n || !n.link) { toast("원문 링크가 아직 없어요"); return; }
-  if (n.link.method !== "POST") { window.open(n.link.url, "_blank", "noopener"); return; }
+  if (n.link.method !== "POST") {
+    if (!/^https?:\/\//i.test(n.link.url)) { toast("열 수 없는 주소예요"); return; } // 직접 입력한 주소는 http(s)만 연다
+    window.open(n.link.url, "_blank", "noopener"); return;
+  }
   const f = document.createElement("form");
   f.method = "POST"; f.action = n.link.url; f.target = "_blank"; f.style.display = "none";
   for (const [k, v] of Object.entries(n.link.fields || {})) {

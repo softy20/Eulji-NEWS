@@ -39,6 +39,9 @@
     const mi = text.match(/(마일리지|비교과\s*포인트|EU\s*포인트|포인트)[^\d\n]{0,12}(\d{1,3})\s*(점|포인트|P|p)/);
     if (mi) out.mileage = +mi[2];
 
+    const um = text.match(/https?:\/\/[^\s<>"')]+/); // 글 안의 첫 주소 (신청 폼 등)
+    if (um) out.url = um[0];
+
     out.desc = lines.slice(1).join("\n").slice(0, 300);
     return out;
   }
@@ -194,6 +197,8 @@
       </div>
       <label class="lbl" for="mPlace">장소</label>
       <input id="mPlace" class="field" autocomplete="off">
+      <label class="lbl" for="mUrl">원문 주소 <span class="opt">선택</span></label>
+      <input id="mUrl" class="field" type="text" inputmode="url" placeholder="https://…" autocomplete="off" autocapitalize="off">
       <div class="two">
         <div><label class="lbl" for="mMileage">마일리지(점)</label><input id="mMileage" type="number" inputmode="numeric" min="0" class="field"></div>
         <div><label class="lbl" for="mSource">출처</label><select id="mSource" class="field">${sourceOptions(lastSrc)}</select></div>
@@ -212,7 +217,7 @@
     if (!dirty.has("sub")) $("#mSub").value = guessSub(cat, text);
     const set = (id, v) => { if (!dirty.has(id)) $("#" + id).value = v ?? ""; };
     set("mTitle", x.title); set("mDeadline", x.deadline); set("mDate", x.date);
-    set("mPlace", x.place); set("mMileage", x.mileage); set("mDesc", x.desc);
+    set("mPlace", x.place); set("mUrl", x.url); set("mMileage", x.mileage); set("mDesc", x.desc);
   }
   function setCat(c) {
     cat = c;
@@ -225,7 +230,12 @@
   async function save() {
     const title = val("mTitle");
     if (!title) { toast("제목을 입력해 주세요"); $("#mTitle").focus(); return; }
+    // 원문 주소: 주소 앞에 http(s)가 없으면 붙이고, 공백이 섞였으면 막는다
+    let url = val("mUrl");
+    if (url && !/^https?:\/\//i.test(url)) url = "https://" + url;
+    if (url && !/^https?:\/\/[^\s]+$/i.test(url)) { toast("원문 주소를 확인해 주세요"); $("#mUrl").focus(); return; }
     const item = {
+      link: url ? { url, method: "GET" } : undefined,
       id: "m-" + Date.now().toString(36), cat, sub: val("mSub"), title, source: val("mSource"),
       host: val("mHost"), deadline: val("mDeadline"), date: val("mDate"), place: val("mPlace"),
       mileage: val("mMileage") ? +val("mMileage") : undefined, desc: $("#mDesc").value.trim(), posted: ymd(TODAY),
@@ -306,7 +316,7 @@
   $("#sheet").addEventListener("input", e => {
     const id = e.target.id;
     if (id === "mText") { fillFrom(e.target.value); return; }
-    if (/^m(Title|Deadline|Date|Place|Mileage|Desc|Sub)$/.test(id)) dirty.add(id === "mSub" ? "sub" : id);
+    if (/^m(Title|Deadline|Date|Place|Url|Mileage|Desc|Sub)$/.test(id)) dirty.add(id === "mSub" ? "sub" : id);
   });
   $("#sheet").addEventListener("change", e => { if (e.target.id === "mSub") dirty.add("sub"); });
 
