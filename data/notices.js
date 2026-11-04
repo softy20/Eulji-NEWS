@@ -1,5 +1,5 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-04T04:37:52.516Z";
+window.CRAWLED_AT = "2026-11-04T16:42:29.886Z";
 window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":14},"innov":{"ok":true,"count":9},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":12},"lib":{"ok":true,"count":8}};
 window.CRAWLED = [
  {
@@ -316,7 +316,7 @@ window.CRAWLED = [
   "source": "official",
   "board": "acad",
   "host": "학사 공지",
-  "title": "2026학년도 2학기 강의평가 실시 안내",
+  "title": "2026학년도 2학기 강의평가 실시 안내(2026.11.4 수정)",
   "posted": "2026-10-16",
   "pinned": true,
   "link": {
