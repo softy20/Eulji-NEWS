@@ -1,7 +1,87 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-04T16:42:29.886Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":14},"innov":{"ok":true,"count":9},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":12},"lib":{"ok":true,"count":8}};
+window.CRAWLED_AT = "2026-11-05T04:52:09.418Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":14},"innov":{"ok":true,"count":10},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":9},"lib":{"ok":true,"count":8}};
 window.CRAWLED = [
+ {
+  "id": "counsel-189",
+  "source": "official",
+  "board": "counsel",
+  "host": "인권센터",
+  "title": "[의정부캠퍼스] 2026년G.V.P. 양성평등 집단상담 (의료현장에서의 인권)",
+  "posted": "2026-11-05",
+  "pinned": false,
+  "link": {
+   "url": "https://counsel.eulji.ac.kr/?menuno=4056",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "189",
+    "siteno": "286",
+    "no": "860",
+    "page": "1",
+    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iODYwIiBza2luPSJub3RpY2UiPjwvY2FsbD4="
+   }
+  },
+  "list": "https://counsel.eulji.ac.kr/?menuno=4056",
+  "text": "인권센터 의정부캠퍼스입니다!\n인권센터에서 \"의료현장에서의 인권\"을 주제로 한 집단 프로그램인 G.V.P.를 진행합니다.\n의료 현장서 마주할 수 있는 여러 가지 인권 문제에 대해서 미리 생각해보고,\n적절하게 대응할 수 있는 방법을 함께 알아봅니다!\n✅일시 : 2026년 11월 19일(목) 13:00~15:00\n✅장소 : 일현관 734호 인권센터 세미나실\n✅대상 : 건강한 의료보건인을 꿈꾸는 의정부캠퍼스 재학생\n✅신청방법 : 구글폼 작성(https://forms.gle/9Sbvti2w8ejhnv1V8) (~11/12)\n✅혜택 : 마일리지 20점 + 비교과 인재인증(H영역)\n\"나를 잘 지켜야, 환자도 잘 지킬 수 있으니까\"\n\"미래의 보건의료 인재인 을지대 학우들을 위한 특별한 시간!\"\n❓문의: 031-951-3632",
+  "deadline": "2026-11-12",
+  "date": "2026-11-19",
+  "place": "일현관 734호 인권센터 세미나실",
+  "mileage": 20,
+  "sub": "비교과·프로그램"
+ },
+ {
+  "id": "counsel-188",
+  "source": "official",
+  "board": "counsel",
+  "host": "인권센터",
+  "title": "[한국대학교육협의회] 대학(원)생 심리·정서 지원 방안에 관한 설문 조사(기간 연장)",
+  "posted": "2026-11-05",
+  "pinned": false,
+  "link": {
+   "url": "https://counsel.eulji.ac.kr/?menuno=4056",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "188",
+    "siteno": "286",
+    "no": "860",
+    "page": "1",
+    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iODYwIiBza2luPSJub3RpY2UiPjwvY2FsbD4="
+   }
+  },
+  "list": "https://counsel.eulji.ac.kr/?menuno=4056",
+  "text": "안녕하세요, 인권센터입니다.\n한국대학교육협의회의 협조 요청으로 대학(원)생들의 심리 정서 실태를 파악하고, 실효성 있는 정책 방안을 마련하고자 설문 조사를 실시합니다.\n조사 대상: 전국 4년제 대학의 대학생 및 대학원생\n조사 기간: 2026년 9월 17일(목) &sim; 11월 15일(일)\n조사 내용: 대학(원)생 심리·정서 실태, 학생상담센터 프로그램 이용 현황과 인식\n조사 방법: 온라인 설문 (https://forms.gle/xSPeQ76R7XwbYNbn8)\n문 의 처: 정책연구팀 박연복 선임연구원 : 02-6919-3902, 904 / pyb12@kcue.or.kr\n대학(원)생들의 심리 정서적 현황 이해 및 교내 상담센터 서비스 향상을 위해 많은 관심과 참여 부탁드립니다.\n감사합니다.",
+  "sub": "비교과·프로그램"
+ },
+ {
+  "id": "innov-1333",
+  "source": "official",
+  "board": "innov",
+  "host": "대학혁신지원사업단",
+  "title": "[인권센터] G.V.P. 양성평등 집단상담(의료현장에서의 인권)(의정부캠퍼스)",
+  "posted": "2026-11-05",
+  "pinned": false,
+  "link": {
+   "url": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "1333",
+    "siteno": "283",
+    "no": "1999",
+    "page": "1",
+    "ztag": "rO0ABXQANzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTk5OSIgc2tpbj0ibm90aWNlX2lubm8iPjwvY2FsbD4="
+   }
+  },
+  "list": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
+  "text": "인권센터 의정부캠퍼스입니다!\n인권센터에서 \"의료현장에서의 인권\"을 주제로 한 집단 프로그램인 G.V.P.를 진행합니다.\n의료 현장서 마주할 수 있는 여러 가지 인권 문제에 대해서 미리 생각해보고,\n적절하게 대응할 수 있는 방법을 함께 알아봅니다!\n✅일시 : 2026년 11월 19일(목) 13:00~15:00\n✅장소 : 일현관 734호 인권센터 세미나실\n✅대상 : 건강한 의료보건인을 꿈꾸는 의정부캠퍼스 재학생\n✅신청방법 : 구글폼 작성(https://forms.gle/9Sbvti2w8ejhnv1V8) (~11/12)\n✅혜택 : 마일리지 20점 + 비교과 인재인증(H영역)\n\"나를 잘 지켜야, 환자도 잘 지킬 수 있으니까\"\n\"미래의 보건의료 인재인 을지대 학우들을 위한 특별한 시간!\"\n❓문의: 031-951-3632",
+  "deadline": "2026-11-12",
+  "date": "2026-11-19",
+  "place": "일현관 734호 인권센터 세미나실",
+  "mileage": 20,
+  "sub": "비교과·프로그램"
+ },
  {
   "id": "innov-1332",
   "source": "official",
@@ -1401,38 +1481,6 @@ window.CRAWLED = [
   "sub": "비교과·프로그램"
  },
  {
-  "id": "counsel-176",
-  "source": "official",
-  "board": "counsel",
-  "host": "인권센터",
-  "title": "2026년 멘토링프로그램 'With U' 참여자 모집 안내",
-  "posted": "2026-08-25",
-  "pinned": false,
-  "link": {
-   "url": "https://counsel.eulji.ac.kr/?menuno=4056",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "176",
-    "siteno": "286",
-    "no": "860",
-    "page": "1",
-    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iODYwIiBza2luPSJub3RpY2UiPjwvY2FsbD4="
-   }
-  },
-  "list": "https://counsel.eulji.ac.kr/?menuno=4056",
-  "text": "🌱 나만의 멘토와 함께하는 1:1 성장 이야기\n✨ 2026 With U 멘토링 프로그램 ✨\n대학생활 적응부터 진로 탐색, 목표 설정까지\n혼자 고민하고 있었다면 이제 나만의 멘토와 함께 이야기해보세요!\n💙 With U 멘토링 프로그램이란?\n대학생활 적응 역량을 높이고, 진로 탐색과 목표 설정을 돕는 1:1 맞춤형 멘토링 프로그램입니다.\n👤 신청 대상\n멘토 : 성남캠퍼스 2학년 이상 재학생 15명\n멘티 : 성남캠퍼스 2026학년도 편입생·복학생·전과생 15명\n📅 신청기간\n2026. 8. 24.(월) ~ 9. 11.(금)\n📝 신청방법\n구글폼 신청서 작성\nhttps://forms.gle/dBdzqMtcKYQb4HCA8\n🎁 참여 혜택\n✔ 마일리지 50점\n✔ 비교과 영역 인증\n✔ 수료증\n✔ 활동비 지원\n✔ 졸업인증제 봉사시간(멘토)\n📌 프로그램 일정\n① 신청 및 발표 : 9/14(월), 오후 팀원 발표\n② 프로그램 OT : 9/17(목), 16:30\n③ 멘토링 활동 : 9~10월 중 총 3회\n④ 수료식 : 11월 초 예정\n※ 상세 일정은 추후 공지되며, 일정은 변경될 수 있습니다.\n💬 문의\n을지대학교 인권센터 학생생활상담실 ☎ 031-740-7463\n💌 카카오톡 「을지대학교 인권센터」 채널\n혼자 고민하는 대학생활에서 함께 성장하는 대학생활로! 🌿",
-  "deadline": "2026-09-14",
-  "mileage": 50,
-  "periods": [
-   {
-    "start": "2026-08-24",
-    "end": "2026-09-11"
-   }
-  ],
-  "sub": "비교과·프로그램"
- },
- {
   "id": "ctl-148",
   "source": "official",
   "board": "ctl",
@@ -1515,26 +1563,26 @@ window.CRAWLED = [
   "sub": "일반 공지"
  },
  {
-  "id": "counsel-174",
+  "id": "innov-1322",
   "source": "official",
-  "board": "counsel",
-  "host": "인권센터",
+  "board": "innov",
+  "host": "대학혁신지원사업단",
   "title": "[인권센터] 2026년 Brand UⅠ프로그램 안내",
   "posted": "2026-08-24",
   "pinned": false,
   "link": {
-   "url": "https://counsel.eulji.ac.kr/?menuno=4056",
+   "url": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
    "method": "POST",
    "fields": {
     "act": "view",
-    "bbsno": "174",
-    "siteno": "286",
-    "no": "860",
+    "bbsno": "1322",
+    "siteno": "283",
+    "no": "1999",
     "page": "1",
-    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iODYwIiBza2luPSJub3RpY2UiPjwvY2FsbD4="
+    "ztag": "rO0ABXQANzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTk5OSIgc2tpbj0ibm90aWNlX2lubm8iPjwvY2FsbD4="
    }
   },
-  "list": "https://counsel.eulji.ac.kr/?menuno=4056",
+  "list": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
   "text": "안녕하세요. 인권센터 학생생할상담실입니다.\n2026년 2학기를 맞이하며 자신에 대한 이해와 진로탐색을 지원하기 위해 1~2학년 대상 진로 프로그램 'Brand UⅠ'에 참께할 참여자를 모집합니다.\n''Brand UⅠ' 프로그램은 아직 자신의 구체적 진로를 찾는 것에 어려움을 가지고 있거나, 진로에 확신을 얻고 싶은 1~2학년 학생들을 지원하기 위한 진로 집단상담 프로그램입니다.\n성공적인 진로결정으로 나아가는 데 도움을 얻고 싶은 1~2학년 재학생 여러분의 많은 관심과 참여를 기다리겠습니다!\n✅ 일시: 2026. 9. 15.(화) 15:00~17:00\n✅ 신청대상: 성남캠퍼스 1~2학년 재학생\n✅ 신청방법: 구글폼 신청(아래 링크 or 포스터 내 QR 신청)\n&rarr; https://forms.gle/N7E5u6WSEU95rEsw8\n✅ 신청기간: 2026. 8. 24.(월)~9.4.(금)\n✅ 참여혜택\n- 마일리지 20점 & 맛있는 간식\n- 비교과 인재인증(H 영역)\n✅ 문의: 031)740-7540",
   "deadline": "2026-09-04",
   "date": "2026-09-15",
@@ -1661,95 +1709,6 @@ window.CRAWLED = [
   "list": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
   "text": "2026학년도 복수전공, 부전공 및 융복합전공 신청 안내\n1. 복수전공 및 부전공 선발인원\n대학\n학 과 명\n선발인원\n학과(전공)사무실\n바이오융합대학\n의료공학과\n해당학과\n수용인원\n박애관102\n장례지도학과\n박애관102\n중독재활복지학과\n박애관102\n미용화장품과학과\n박애관102\n스포츠아웃도어학과\n박애관102\n의료IT학과\n박애관505\n의료홍보디자인학과\n박애관102\n식품산업외식학과\n박애관102\n보건환경안전학과\n박애관102\n빅데이터의료융합학과\n박애관502\n※ 보건복지부 및 교육과학기술부 인원제한 학과(계열)인 의예과, 의학과, 보건의료계열 및 사범계열은 복수전공 및 부전공 대상학과 및 계열이 아님\n2. 융복합전공(ECC(Eulji Creativity Convergence) 융합전공제 EU-웰니스 부전공) 선발인원\n전 공 명\n학 과 명\n선발인원\n학과(전공)사무실\n예술치료상담전공\n중독재활복지학과\n해당학과\n수용인원\n박애관102\n유아교육학과\n박애관102\n아동학과\n박애관102\n※ 반드시 사전에 학과사무실을 통해 이수가능 여부를 확인하시기 바랍니다.\n3. 복수전공, 부전공 및 융복합전공(EU-웰니스 부전공) 신청 시기\n- 최소 1학년 2학기 교육과정을 이수한 이후 또는 제1전공을 수료한 이후\n(다만 4학년 제1전공 수료 후 제2전공을 이수하면 학기당 이수학점수가 높아 집중적인 교과 학습으로 효과적인 이수가 가능)\n4. 복수전공 및 부전공, 융복합전공(EU-웰니스 부전공) 신청 자격\n① 부전공 : 1학년 성적 평균평점이 3.0 이상인 자로서 부전공을 희망하는 자는 1학년 2학기 교육과정을 이수한 후 신청 가능\n② 복수전공 : 신청 직전학기까지 제1전공에서 취득한 평균평점이 3.0 이상인 자\n③ 융복합전공(EU-웰니스 부전공) : 해당 전공이 개설된 학과(부) 학부생 신청 가능\n5. 복수전공 이수 학점\n① 제2전공 학과(전공)에서 정한 교과목을 36학점 이상 취득해야함\n② 제1전공 이수 완료 후 1년 이내 이수하여야 함\n6. 부전공 이수 학점: 제2전공 학과(전공)에서 정한 교과목을 21학점 이상 취득해야 함\n7. 융복합전공(EU-웰니스 부전공) 이수 학점: 교과과정에 따라 최소 21학점 이상 이수해야 함\n8. 복수전공 및 부전공, 융복합전공(EU-웰니스 부전공) 신청서 접수 절차 ★\n① 소속학과에서 복수전공 및 부전공, 융복합전공 신청서식 작성\n② 소속학과장과 상담 후 날인\n③ 학생 개인이 희망 학과에 방문하여 신청서 제출\n④ 복수전공 및 부전공, 융복합전공 이수지정과목 상담 (학업계획서 작성)\n⑤ 수강 가능인원 초과 시 선발기준: 1학년 전학기 성적순(평균평점)\n⑥ 복수전공 및 부전공 신청서식에 복수전공 및 부전공, 융복합전공 학과장의 날인\n⑦ 교육정보전산시스템 학부학사 &ndash; 학적 &ndash; 「타전공신청 」에서 해당 전공 신청\n⑧ 신청서는 본인소속(주전공) 학과 제출(학과사무실에서는 기한 내 교무지원팀 제출)\n⑨ 신청서 접수마감 : 2026. 9. 4.(금) 16:00 까지\n9. 제출서류\n①복수전공(부전공, 융복합전공) 신청서 및 학업계획서\n②성적",
   "deadline": "2026-09-04",
-  "sub": "학사"
- },
- {
-  "id": "acad-1076",
-  "source": "official",
-  "board": "acad",
-  "host": "학사 공지",
-  "title": "2026학년도 2학기 공휴일 지정보강일 안내",
-  "posted": "2026-08-07",
-  "pinned": true,
-  "link": {
-   "url": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "1076",
-    "siteno": "194",
-    "no": "568",
-    "page": "1",
-    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNTY4IiBza2luPSJub3RpY2UiPjwvY2FsbD4="
-   }
-  },
-  "list": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
-  "text": "2026학년도 2학기 공휴일 지정보강일 안내\n2026학년도 2학기 공휴일로 인한 지정보강일을 아래와 같이 안내하오니,\n해당 공휴일에 수업이 편성된 학생분들은 참고하여 수강에 차질 없으시길 바랍니다.\n가. 보강수업기간: 2026. 12. 15.(화) ~ 2026. 12. 21.(월)\n나. 공휴일별 보강일자\n공휴일자\n공휴일명\n보강일자\n9월 24일(목)\n추석 연휴\n12월 15일(화)\n9월 25일(금)\n추석 연휴\n12월 16일(수)\n10월 5일(월)\n개천절 대체 휴일\n12월 21일(월)\n10월 9일(금)\n한글날\n12월 18일(금)\n10월 22일(목)\n개교기기념일\n12월 17일(목)\n다. 유의사항\n- 공휴일자 수업은 반드시 지정보강일에 진행하되, 교수자-학생간의 협의에 따라 변동 가능\n- 보강 시간 및 강의실은 휴강일의 기존 시간 및 강의실과 동일\n예) 9월24일(목) 09:00~10:50 수업(강의실: 본관 307호)의 보강수업은 12월15일(화) 09:00~10:50까지 본관 307호에서 진행\n- 지정 보강일은 학사 일정에 따른 것이오니 기간을 준수하여 반드시 진행\n- 공휴일의 경우, 비대면 비실시간 수업(녹화영상 수업)만 허용(단, 교수자와 학생 간 협의하여야 함)",
-  "periods": [
-   {
-    "start": "2026-12-15",
-    "end": "2026-12-21"
-   },
-   {
-    "start": "2026-09-24",
-    "end": "2026-12-15"
-   }
-  ],
-  "sub": "학사"
- },
- {
-  "id": "acad-1079",
-  "source": "official",
-  "board": "acad",
-  "host": "학사 공지",
-  "title": "2026학년도 2학기 대전캠퍼스 생활관 정기입사모집 합격자 안내",
-  "posted": "2026-08-07",
-  "pinned": false,
-  "link": {
-   "url": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "1079",
-    "siteno": "194",
-    "no": "568",
-    "page": "1",
-    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNTY4IiBza2luPSJub3RpY2UiPjwvY2FsbD4="
-   }
-  },
-  "list": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
-  "text": "",
-  "sub": "학사"
- },
- {
-  "id": "acad-1078",
-  "source": "official",
-  "board": "acad",
-  "host": "학사 공지",
-  "title": "2026학년도 2학기 e-러닝 학점인정 교과목 수강관련 안내(8.7. 업로드)",
-  "posted": "2026-08-07",
-  "pinned": false,
-  "link": {
-   "url": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "1078",
-    "siteno": "194",
-    "no": "568",
-    "page": "1",
-    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNTY4IiBza2luPSJub3RpY2UiPjwvY2FsbD4="
-   }
-  },
-  "list": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
-  "text": "2026학년도 2학기 e-러닝 학점인정 교과목 수강 안내\n2026학년도 2학기 「대학 e-러닝 학점인정 컨소시엄」에서 운영하는 e-러닝 교과목 수강 관련 사항을 안내드리오니 참고하시기 바랍니다.\n※ 「대학 e-러닝 학점인정 컨소시엄」이란?\n- 학점인정컨소시엄-참여대학 간 MOU 체결을 통한 원격수업 콘텐츠 공유 및 학점교류\n- 학습자에게 온라인을 통한 다양한 학습기회 제공\n1. 개강일자: 2026. 9. 1.(화) 14:00\n2. 운영기간: 2026. 9. 1.(화) ~ 2026. 12. 15.(화)\n3. 수강신청\n- 본교 수강신청 방법과 동일(수강신청 웹사이트 및 모바일 어플)을 통해 수강신청\n- 대상학과전공을 성남-교양학부(성남) / 의정부-교양학부(의정부) 선택하여 강좌 조회\n※ 수강신청 일정 종료 후, 학교에서 일괄적으로 e-러닝 수강사이트에 수강생 등록 예정\n※ 수강정정 기간 이후, 수강신청한 학생의 경우 9월 8일(화) 수강생 등록 예정\n- 학기당 최대 6학점 신청 가능(타 학점교류 합산하여 한학기 최대 6학점 허용)\n※ 재학 중 전체 학점교류 최대 21학점까지 허용됨\n4. 수강사이트 : https://selc.or.kr\n5. 운영 교과목(성남 14개, 의정부 9개) - 우리대학 교양선택(일반영역)에 해당함\n구분\n과목명\n개발대학\n운영교수\n학점\n개설 캠퍼스\n비고\n성남\n의정부\n1\n상상과창조\n한양대학교\n(서울)\n유영만\n3\nO\nO\n교양\n선택\n-\n일반\n영역\n2\n철학과인간가치\n이재복\n3\nO\nO\n3\n외국인학생을위한실용한국어*\n전은진\n3\nO\n4\n한국사회와문화*\n이은실\n3\nO\n5\n언어의품격:언어바르고품위있게사용하기\n전은진\n3\nO\nO\n6\n정보사회학입문\n한양대학교\n(ERIKA)\n윤영민\n3\nO\n7\n문화콘텐츠스토리텔링전략\n윤혜영\n3\nO\n8\n문화기술과사회변동\n두일천\n3\nO\nO\n9\n저작권과스마트폰의이해\n건국대학교\n정연덕\n2\nO\n10\n전략적의사결정과문제해결\n광운대학교\n박종구\n3\nO\nO\n11\n현대사회와신소재\n손희상\n3\nO\nO\n12\n화폐와금융의과거,현재,그리고미래\n현정환\n3\nO\nO\n13\n1인미디어와융합콘텐츠\n한성대학교\n조세홍\n3\nO\nO\n14\nAI와첫만남-우린Data로말해\n청운대학교\n김선숙\n3\nO\nO\n* 외국인 학생 대상 교과목\n※ 위 14개 교과목에 한하여 수강 가능\n※ 강의계획서 및 시범강의는 하단 링크에서 확인 가능\n- https://selc.or.kr/lms/lms/courseRequest/doCourseCrossRegistrationSearch.do?mnid=2019016255\n※ 미개설된 교과목에 대한 대체 교과목 안내\n- 재수강을 희망하는 학생은 아래의 표를 확인 한 후, 대체교과목으로 수강신청 및 교과목일치확인서(첨부)를 제출해야 함\n미개설 교과목명\n학점\n▶\n대체교과목명\n학점\n생태친화적 기업경영 : 녹색생활의 첫걸음\n3\n상상과창조, 철학적인간가치, 언어의 품격: 언어 바르고 품위있게 사용하기 중 택1\n3\n생태친화적 기업경영 : 시대의 요청 ESG\n3\n빅데이터 시대의 ESG 트렌드\n3\n테크노경영학- 창업의 한 수\n3\n글로벌시대의예술과가치\n3\n4차 ",
-  "deadline": "2026-09-08",
-  "periods": [
-   {
-    "start": "2026-09-01",
-    "end": "2026-12-15"
-   }
-  ],
   "sub": "학사"
  }
 ];
