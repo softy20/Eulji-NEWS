@@ -25,7 +25,7 @@ const FEST_NOTICES = []; // { title, sub, when }
    학교 소식(cat: "school")으로 넣는다. */
 const parseDay = s => { if (!s) return undefined; const [y, m, dd] = s.split("-").map(Number); return new Date(y, m - 1, dd); };
 const BOARD_ICON = { job: "i-brief", ctl: "i-cap", intl: "i-globe", counsel: "i-heart", innov: "i-zap", aac: "i-target", lib: "i-book", liberal: "i-cap", acad: "i-cal" };
-const SCHOOL_SUBS = ["학사", "비교과·프로그램", "공모전", "장학·지원", "일반 공지"];
+const SCHOOL_SUBS = ["일반 공지", "비교과·프로그램", "공모전", "학사", "장학·지원"];
 // 기간이 여러 개(1차·2차)면 아직 안 끝난 것 중 가장 가까운 끝나는 날을, 모두 끝났으면 마지막 날을 마감으로 본다
 function pickDeadline(c) {
   if (c.deadline) return parseDay(c.deadline);
