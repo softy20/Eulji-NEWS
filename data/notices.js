@@ -1,7 +1,34 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-05T04:52:09.418Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":14},"innov":{"ok":true,"count":10},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":9},"lib":{"ok":true,"count":8}};
+window.CRAWLED_AT = "2026-11-05T16:58:43.308Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":14},"innov":{"ok":true,"count":10},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":9},"lib":{"ok":true,"count":10}};
 window.CRAWLED = [
+ {
+  "id": "counsel-190",
+  "source": "official",
+  "board": "counsel",
+  "host": "인권센터",
+  "title": "[성남캠퍼스] 2026-2 G.V.P. 집단상담(인권의 이해와 실천) 안내",
+  "posted": "2026-11-05",
+  "pinned": false,
+  "link": {
+   "url": "https://counsel.eulji.ac.kr/?menuno=4056",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "190",
+    "siteno": "286",
+    "no": "860",
+    "page": "1",
+    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iODYwIiBza2luPSJub3RpY2UiPjwvY2FsbD4="
+   }
+  },
+  "list": "https://counsel.eulji.ac.kr/?menuno=4056",
+  "text": "안녕하세요. 인권센터 양성평등상담실입니다.\nG.V.P.(Gender Value up Program)는 성 및 인권에 대한 주제를 가지고 일상에서 안전한 캠퍼스 문화를 형성을 위한 배움을 갖는 프로그램입니다.\n을지대학교 성남캠퍼스 재학생을 대상으로, 인권에 대해 이해하고 실천을 고민하면서,\n인권 지향적인 캠퍼스를 만들기 위한 방안을 논의하고 배우는 시간을 준비했습니다.\n✅일정 : 11.20.(금) 오후 1시~3시\n✅장소: 창의관 304호 인권센터 세미나실\n✅대상: 성남캠퍼스 재학생 선착순 20명\n✅주제: '인권에 대한 이해와 실천' 집단상담\n✅참가혜택: 마일리지 20점 + 비교과 인재인증 영역(H) + 간식제공\n✅문의: 031-740-7541 / 인권센터 카카오톡 채널\n✅링크: https://forms.gle/vFYX9RmCGPGaBCtK7​",
+  "date": "2026-11-20",
+  "place": "창의관 304호 인권센터 세미나실",
+  "mileage": 20,
+  "sub": "비교과·프로그램"
+ },
  {
   "id": "counsel-189",
   "source": "official",
@@ -80,6 +107,38 @@ window.CRAWLED = [
   "date": "2026-11-19",
   "place": "일현관 734호 인권센터 세미나실",
   "mileage": 20,
+  "sub": "비교과·프로그램"
+ },
+ {
+  "id": "lib-NGRiMmU0MDJmQzYwMTFuYjY0ZUtyVDRGUlZpNjAxMkRBZg==",
+  "source": "official",
+  "board": "lib",
+  "host": "학술정보원",
+  "title": "DBpia 11월 온라인 교육 안내(휴먼 리터러시)",
+  "posted": "2026-11-05",
+  "campus": "\"_tscCmtKeyNum_\"",
+  "pinned": false,
+  "link": {
+   "url": "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=NGRiMmU0MDJmQzYwMTFuYjY0ZUtyVDRGUlZpNjAxMkRBZg%3D%3D",
+   "method": "GET"
+  },
+  "text": "누리미디어에서 DBPIA 11월 온라인 교육으로 'AI 시대, 더욱 중요해지는 휴먼 리터러시' 교육을 아래와 같이 진행하오니 많은 관심과 참여 부탁드립니다.\n※ 본 교육은 누리미디어(DBPIA)에서 주최하는 것으로 관련 문의는 포스터 하단 교육 문의 이메일로 연락주시기 바랍니다.\n※ 교육 신청은 포스터의 교육 일정별 QR 코드로 신청페이지에 접속하셔서 직접 신청해주세요.\n첨부파일 :\nDBpia 11월 온라인 교육_02.png [ 1.82854 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
+  "sub": "비교과·프로그램"
+ },
+ {
+  "id": "lib-NGRiMmU0MDJmQzYwMTFuYjY0ZUlDSjRGUlZpNjAxMkRBZg==",
+  "source": "official",
+  "board": "lib",
+  "host": "학술정보원",
+  "title": "DBpia 11월 온라인 교육 안내(DBpia & DBpia AI & Cit..",
+  "posted": "2026-11-05",
+  "campus": "\"_tscCmtKeyNum_\"",
+  "pinned": false,
+  "link": {
+   "url": "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=NGRiMmU0MDJmQzYwMTFuYjY0ZUlDSjRGUlZpNjAxMkRBZg%3D%3D",
+   "method": "GET"
+  },
+  "text": "누리미디어에서 DBPIA 11월 온라인 교육으로 'DBpia & DBpia AI & Citeasy' 교육을 아래와 같이 진행하오니 많은 관심과 참여 부탁드립니다.\n※ 본 교육은 누리미디어(DBPIA)에서 주최하는 것으로 관련 문의는 포스터 하단 교육 문의 이메일로 연락주시기 바랍니다.\n※ 교육 신청은 포스터의 교육 일정별 QR 코드로 신청페이지에 접속하셔서 직접 신청해주세요.\n첨부파일 :\nDBpia 11월 온라인 교육_01.png [ 2.92562 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
   "sub": "비교과·프로그램"
  },
  {
@@ -569,6 +628,37 @@ window.CRAWLED = [
   "sub": "비교과·프로그램"
  },
  {
+  "id": "acad-1086",
+  "source": "official",
+  "board": "acad",
+  "host": "학사 공지",
+  "title": "[EU있는 기록] 우수 활용 공모전",
+  "posted": "2026-09-23",
+  "pinned": false,
+  "link": {
+   "url": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "1086",
+    "siteno": "194",
+    "no": "568",
+    "page": "1",
+    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNTY4IiBza2luPSJub3RpY2UiPjwvY2FsbD4="
+   }
+  },
+  "list": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
+  "text": "안녕하세요.\n전공설계지원센터에서 학업 및 경험을 우수하게 계획/실행/관리한 사례를 발굴 및 학내 공유하고자\n'[EU있는 기록] 우수 활용 공모전'을 개최합니다.\n여러분의 많은 참여 부탁드립니다.\n■ 주제: [EU있는 기록]을 통한 1) 학업 및 경험 관리, 2) E-포트폴리오 관리, 3) 독서 관리\n■ 대상: 전체 재학생\n■ 양식: 작성한 노션 링크\n■ 공모 부문\n1) 자기주도 학업 관리 (학업 계획 + 활동 기록)\n- 자신의 전공과 경험을 전략적으로 계획 및 이수하고 있는지 논리적으로 시각화한 사례\n- [EU있는 기록] 템플릿 '수강 계획' + '활동 실행' 메뉴 사용\n2) 미래 설계 E-포트폴리오 (전체 활용 + 디지털 이력서)\n- 템플릿의 모든 기능을 활용해 자기만의 고유한 브랜딩을 완성한 사례\n- [EU있는 기록] 템플릿 '포트폴리오' 메뉴 사용\n3) 독서관리 (독서관리 + 학술정보원 추천도서)\n- '독서 관리' 메뉴를 활용하여 자기만의 독서 활동을 기록한 사례\n- [EU있는 기록] '추천도서' + '독서 관리' 메뉴 사용\n- 해당 부문은 학술정보원 주관이며 별도로 심사 및 수상이 진행됩니다.\n■ 접수 기간: 2026.9.1.(화) ~ 11.30.(월)\n■ 접수 방법: 구글 폼 제출 (https://forms.gle/iQjZZv1BAQLnGkdZ6)\n※ 서약서 양식 첨부 파일 참고\n■ 수상 혜택\n1) 자기주도 학업 관리 / 미래 설계 E-포트폴리오\n- 최우수상(각 분야 1명): 상금 300,000원, 상장 수여\n- 우수상(각 분야 3명): 상금 200,000원, 상장 수여\n- 장려상(각 분야 10명): 상금 30,000원, 상장 수여\n※ 상금의 경우 장학금성이 아니며 실지급 됩니다.\n2) 독서 관리\n- 특별상(1명): 에어팟 4세대(학술정보원 특별 경품), 상장 수여\n자세한 사항은 노션 페이지에서 확인해주세요.\n[안내 페이지 바로 가기 ▶ https://elastic-hunter-cfa.notion.site/EU-3db224dc9feb80048505d1a671e69de0?pvs=74]\n※ 문의: 전공설계지원센터(031-740-7555)\n전 공 설 계 지 원 센 터 장",
+  "deadline": "2026-11-30",
+  "periods": [
+   {
+    "start": "2026-09-01",
+    "end": "2026-11-30"
+   }
+  ],
+  "sub": "학사"
+ },
+ {
   "id": "counsel-180",
   "source": "official",
   "board": "counsel",
@@ -597,7 +687,7 @@ window.CRAWLED = [
   "source": "official",
   "board": "aac",
   "host": "전공설계지원센터",
-  "title": "[EU있는 기록] 우수 활용 공모전",
+  "title": "[EU있는 기록] 우수 활용 공모전 (~11/30(월) 까지 기간 연장)",
   "posted": "2026-09-22",
   "pinned": true,
   "link": {
@@ -614,7 +704,7 @@ window.CRAWLED = [
   },
   "list": "https://eulji.ac.kr/aac/index.html?menuno=7191",
   "text": "안녕하세요.\n전공설계지원센터에서 학업 및 경험을 우수하게 계획/실행/관리한 사례를 발굴 및 학내 공유하고자\n'[EU있는 기록] 우수 활용 공모전'을 개최합니다.\n여러분의 많은 참여 부탁드립니다.\n■ 주제: [EU있는 기록]을 통한 1) 학업 및 경험 관리, 2) E-포트폴리오 관리, 3) 독서 관리\n■ 대상: 전체 재학생\n■ 양식: 작성한 노션 링크\n■ 공모 부문\n1) 자기주도 학업 관리 (학업 계획 + 활동 기록)\n- 자신의 전공과 경험을 전략적으로 계획 및 이수하고 있는지 논리적으로 시각화한 사례\n- [EU있는 기록] 템플릿 '수강 계획' + '활동 실행' 메뉴 사용\n2) 미래 설계 E-포트폴리오 (전체 활용 + 디지털 이력서)\n- 템플릿의 모든 기능을 활용해 자기만의 고유한 브랜딩을 완성한 사례\n- [EU있는 기록] 템플릿 '포트폴리오' 메뉴 사용\n3) 독서관리 (독서관리 + 학술정보원 추천도서)\n- '독서 관리' 메뉴를 활용하여 자기만의 독서 활동을 기록한 사례\n- [EU있는 기록] '추천도서' + '독서 관리' 메뉴 사용\n- 해당 부문은 학술정보원 주관이며 별도로 심사 및 수상이 진행됩니다.\n■ 접수 기간: 2026.9.1.(화) ~ 11.1.(일)\n■ 접수 방법: 구글 폼 제출 (https://forms.gle/iQjZZv1BAQLnGkdZ6)\n※ 서약서 양식 첨부 파일 참고\n■ 수상 혜택\n1) 자기주도 학업 관리 / 미래 설계 E-포트폴리오\n- 최우수상(각 분야 1명): 상금 300,000원, 상장 수여\n- 우수상(각 분야 3명): 상금 200,000원, 상장 수여\n- 장려상(각 분야 10명): 상금 30,000원, 상장 수여\n※ 상금의 경우 장학금성이 아니며 실지급 됩니다.\n2) 독서 관리\n- 특별상(1명): 에어팟 4세대(학술정보원 특별 경품), 상장 수여\n자세한 사항은 노션 페이지에서 확인해주세요.\n[안내 페이지 바로 가기 ▶ https://elastic-hunter-cfa.notion.site/EU-3db224dc9feb80048505d1a671e69de0?pvs=74]\n※ 문의: 전공설계지원센터(031-740-7555)\n전 공 설 계 지 원 센 터 장",
-  "deadline": "2026-11-01",
+  "deadline": "2026-11-30",
   "periods": [
    {
     "start": "2026-09-01",
@@ -1179,30 +1269,6 @@ window.CRAWLED = [
   },
   "list": "https://eulji.ac.kr/international/index.html?menuno=4856",
   "text": "안녕하세요. 국제교류팀입니다.\n대학원생 대상으로 운영해 온 영어시험 대체과정이 종료되어, 향후 더 이상 운영되지 않음을 안내드립니다.\n이에 따라 앞으로는 대학원에서 시행하는 외국어시험을 통해 외국어시험 응시 및 관련 절차를 진행해 주시기 바랍니다.\n외국어시험 일정 및 신청 방법 등 자세한 사항은 대학원 공지사항을 통해 확인해 주시기 바랍니다.\n감사합니다.",
-  "sub": "일반 공지"
- },
- {
-  "id": "counsel-177",
-  "source": "official",
-  "board": "counsel",
-  "host": "인권센터",
-  "title": "교제폭력·스토킹​ 레드플래그 10",
-  "posted": "2026-09-01",
-  "pinned": false,
-  "link": {
-   "url": "https://counsel.eulji.ac.kr/?menuno=4056",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "177",
-    "siteno": "286",
-    "no": "860",
-    "page": "1",
-    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iODYwIiBza2luPSJub3RpY2UiPjwvY2FsbD4="
-   }
-  },
-  "list": "https://counsel.eulji.ac.kr/?menuno=4056",
-  "text": "대학 내 교제폭력·스토킹 피해자가 고위험 징후를 조기에 인지하고 신속하게 지원을 위해 성평등가족부에서 제작한「교제폭력·스토킹 레드플래그 10」을 공유하니, 범죄 피해 예방과 대처에 도움을 받으시기를 바랍니다.",
   "sub": "일반 공지"
  },
  {
