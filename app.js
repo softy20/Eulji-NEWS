@@ -6,7 +6,6 @@ const TODAY = new Date(); TODAY.setHours(0,0,0,0);
 const SOURCES = {
   official: { name: "공식 홈페이지", icon: "i-globe" },
   everytime: { name: "에브리타임", icon: "i-msg" },
-  instagram: { name: "인스타그램", icon: "i-camera" },
   other: { name: "기타", icon: "i-pin" },
 };
 // 기간 한정 카테고리: 축제 기간에만 active: true 로 켜고 날짜를 넣는다
