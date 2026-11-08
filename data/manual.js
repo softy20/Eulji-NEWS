@@ -71,16 +71,6 @@ window.MANUAL = [
   "posted": "2026-11-04"
  },
  {
-  "id": "m-mw1tijsg",
-  "cat": "school",
-  "sub": "일반 공지",
-  "title": "2026학년도 2학기 1차 강의평가 안내입니다.",
-  "source": "other",
-  "deadline": "2026-11-09",
-  "desc": "※ 1차 강의평가 마감일: 2026. 11. 9(월) 23:59까지\n※ 1차 강의평가 대상 교과목(일반 및 국시 과목)의 경우 1, 2차 강의평가를 모두 완료해야 성적열람 및 정정 기간에 성적열람 가능",
-  "posted": "2026-11-04"
- },
- {
   "link": {
    "url": "https://forms.gle/sWHRbh439AvNR7L59",
    "method": "GET"
