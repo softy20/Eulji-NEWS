@@ -1,7 +1,62 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-09T19:22:53.812Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":14},"innov":{"ok":true,"count":10},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":10}};
+window.CRAWLED_AT = "2026-11-10T05:45:23.477Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":11},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":10}};
 window.CRAWLED = [
+ {
+  "id": "counsel-191",
+  "source": "official",
+  "board": "counsel",
+  "host": "인권센터",
+  "title": "[인권센터] 폭력예방교육 Quiz 참여 2차 이벤트 안내",
+  "posted": "2026-11-10",
+  "pinned": true,
+  "link": {
+   "url": "https://counsel.eulji.ac.kr/?menuno=4056",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "191",
+    "siteno": "286",
+    "no": "860",
+    "page": "1",
+    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iODYwIiBza2luPSJub3RpY2UiPjwvY2FsbD4="
+   }
+  },
+  "list": "https://counsel.eulji.ac.kr/?menuno=4056",
+  "text": "[이벤트] Quiz 참여하고 기프티콘 받자!\n2026년에 폭력예방교육을 참여했다면? 을지대학교 재학생 누구나 참여 가능!\n참여기간 : 12.14.(월)까지\n참여대상 : 전체 재학생(성남 + 의정부 + 대전캠퍼스 재학생 및 대학원생)\n**2026년에 폭력예방교육을 수강한 재학생을 대상으로 진행되는 퀴즈 참여 이벤트입니다**\n*참여자 중 추첨(200명)을 통해 기프티콘을 드려요!*\nG-class 교육 수강 방법이 알고 싶다면? (클릭)\n(대전캠퍼스는 LMS에서 교육을 수강할 수 있습니다)\n문의: 031-740-7541 / 인권센터 카카오톡 채널\n참여링크: https://forms.gle/5dsyi3bhFEcfDqMT9",
+  "sub": "일반 공지"
+ },
+ {
+  "id": "innov-1334",
+  "source": "official",
+  "board": "innov",
+  "host": "대학혁신지원사업단",
+  "title": "[대학혁신지원사업단] 2026 대학혁신지원사업 참여학생 사례영상 경진대회 개최 안내(~12/11)",
+  "posted": "2026-11-10",
+  "pinned": true,
+  "link": {
+   "url": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "1334",
+    "siteno": "283",
+    "no": "1999",
+    "page": "1",
+    "ztag": "rO0ABXQANzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTk5OSIgc2tpbj0ibm90aWNlX2lubm8iPjwvY2FsbD4="
+   }
+  },
+  "list": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
+  "text": "📢 2026 대학혁신지원사업 참여학생 사례영상 경진대회 개최 안내\n대학혁신지원사업에 참여한 학생 여러분의 다양한 경험과 성과를 공유하기 위한\n「2026 대학혁신지원사업 참여학생 사례영상 경진대회」가 개최됩니다! 🎉\n📌 경진대회 안내\n- 대회명: 2026 대학혁신지원사업 참여학생 사례영상 경진대회\n- 참가자격: 대학혁신지원사업에 참여한 총괄협의회 회원교 재학생(개인 또는 팀)\n- 접수기간: 2026. 11. 9.(월) ~ 12. 11.(금) 23:00\n📝 참가신청 및 제출방법\n- 제출서류: 참가신청서 및 영상 파일\n- 제출방법: 이메일 제출\n- 제출처: uispc0624@gmail.com\n🏆 최종심사 및 시상\n- 「2026 대학혁신포럼」에서 진행\n- 일정: 2027년 1월 개최 예정\n※ 자세한 참가방법 및 세부사항은 첨부된 경진대회 공고문을 참고해 주세요.\n☎ 문의\n- 대학혁신지원사업 총괄협의회 사무국\n- 전화: 055-320-3216\n- 이메일: uispc0624@gmail.com\n✨대학혁신지원사업에 참여하며 경험한 활동과 성과를 영상으로 소개할 수 있는 기회!\n을지대학교 재학생 여러분의 많은 관심과 참여 바랍니다.\n📎 첨부파일\n1. 2026 대학혁신지원사업 참여학생 사례영상 경진대회 공고문\n2. 참가신청서\n3. 참가신청서(예시)\n4. 경진대회 포스터",
+  "deadline": "2026-12-11",
+  "periods": [
+   {
+    "start": "2026-11-09",
+    "end": "2026-12-11"
+   }
+  ],
+  "sub": "공모전"
+ },
  {
   "id": "counsel-190",
   "source": "official",
@@ -409,7 +464,7 @@ window.CRAWLED = [
   "host": "인권센터",
   "title": "[인권센터] EU 인권 서포터즈, 온라인 인권캠페인 퀴즈 이벤트",
   "posted": "2026-10-19",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://counsel.eulji.ac.kr/?menuno=4056",
    "method": "POST",
@@ -1081,30 +1136,6 @@ window.CRAWLED = [
   "sub": "장학·지원"
  },
  {
-  "id": "counsel-178",
-  "source": "official",
-  "board": "counsel",
-  "host": "인권센터",
-  "title": "[안내] 용기 한걸음메아리 하반기 활동 자료",
-  "posted": "2026-09-04",
-  "pinned": false,
-  "link": {
-   "url": "https://counsel.eulji.ac.kr/?menuno=4056",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "178",
-    "siteno": "286",
-    "no": "860",
-    "page": "1",
-    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iODYwIiBza2luPSJub3RpY2UiPjwvY2FsbD4="
-   }
-  },
-  "list": "https://counsel.eulji.ac.kr/?menuno=4056",
-  "text": "안녕하세요. 인권센터 양성평등상담실입니다.\n마약예방활동단 '용기 한걸음메아리' 하반기 활동에 필요한 자료를 공유드립니다.\n1. 중간보고회 자료\n- 상반기 활동 발표 PPT\n- 하반기 활동 안내\n2. 조별활동 보고서\n- 조별 토론회, 콘텐츠 제작\n- 조원이 각자 조별활동 보고서를 개인적으로 제출해주셔야 합니다.\n- 개인별 보고서는 인권센터 카카오톡 채널을 통해 제출해주세요.\n*인권센터 카카오톡 채널: https://pf.kakao.com/_txlTRK\n3. 콘텐츠 제작 활용 로고 파일\n- 로고 파일: 식약처, 대교협, 을지대학교, 인권센터, 인권센터 을랑이 캐릭터\n- 제작하는 콘텐츠에 '을지대학교 용기 한걸음 메아리를 꼭 표기해주세요.\n문의: 031-740-7541 / 용기 한걸음메아리 단체 카톡방",
-  "sub": "일반 공지"
- },
- {
   "id": "acad-1084",
   "source": "official",
   "board": "acad",
@@ -1488,7 +1519,7 @@ window.CRAWLED = [
   "host": "대학혁신지원사업단",
   "title": "[기획조정처] 2026학년도 2학기 따듯한 온기로 건강한 배움EULJISOK 재학생 전공 및 교양서적 구입비 지원 신청(~26.8.30.)",
   "posted": "2026-08-26",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
    "method": "POST",
@@ -1598,26 +1629,26 @@ window.CRAWLED = [
   "sub": "장학·지원"
  },
  {
-  "id": "counsel-175",
+  "id": "innov-1323",
   "source": "official",
-  "board": "counsel",
-  "host": "인권센터",
+  "board": "innov",
+  "host": "대학혁신지원사업단",
   "title": "[인권센터] 2026년 또래내담자 모집 안내",
   "posted": "2026-08-24",
-  "pinned": true,
+  "pinned": false,
   "link": {
-   "url": "https://counsel.eulji.ac.kr/?menuno=4056",
+   "url": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
    "method": "POST",
    "fields": {
     "act": "view",
-    "bbsno": "175",
-    "siteno": "286",
-    "no": "860",
+    "bbsno": "1323",
+    "siteno": "283",
+    "no": "1999",
     "page": "1",
-    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iODYwIiBza2luPSJub3RpY2UiPjwvY2FsbD4="
+    "ztag": "rO0ABXQANzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTk5OSIgc2tpbj0ibm90aWNlX2lubm8iPjwvY2FsbD4="
    }
   },
-  "list": "https://counsel.eulji.ac.kr/?menuno=4056",
+  "list": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
   "text": "안녕하세요. 인권센터 학생생활상담실입니다.\n지속적인 상담을 받는 것은 부담되지만, 자신의 일상고민을 나누고픈 또래내담자를 모집합니다!\n또래상담이란, 자신의 평소 고민을 자신과 비슷한 연령의 유사한 경험을 공유하는 또래에게 비밀보장이란 원칙을 가지고 고민을 나누고 도움을 받는 활동입니다.\n안전하게 자신의 어려움을 공유하고 싶은 분들은 망설이지 말고 신청해주세요!!\n✅ 신청대상: 4회기 상담활동에 내담자로 참여가능한 성남캠퍼스 재학생(일정 협의 가능)\n✅ 신청기간: 8.24.(월)~9.4.(금)\n✅ 신청방법: 구글폼 신청\n&rarr; https://forms.gle/Mu57btGBJqViYDvk7\n✅ 참여혜택: 매 회기 맛있는 간식 제공과 4회기 모두 참여시 선물을 드려요~\n나의 일상고민을 나눌 수 있는 비밀친구를 만드는 또래상담활동에 많은 관심과 신청 부탁드립니다:D",
   "deadline": "2026-09-04",
   "periods": [
