@@ -1,7 +1,31 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-11T16:47:01.082Z";
+window.CRAWLED_AT = "2026-11-12T05:31:12.997Z";
 window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":11},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":10}};
 window.CRAWLED = [
+ {
+  "id": "counsel-192",
+  "source": "official",
+  "board": "counsel",
+  "host": "인권센터",
+  "title": "딥페이크 성범죄 예방 안내",
+  "posted": "2026-11-12",
+  "pinned": false,
+  "link": {
+   "url": "https://counsel.eulji.ac.kr/?menuno=4056",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "192",
+    "siteno": "286",
+    "no": "860",
+    "page": "1",
+    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iODYwIiBza2luPSJub3RpY2UiPjwvY2FsbD4="
+   }
+  },
+  "list": "https://counsel.eulji.ac.kr/?menuno=4056",
+  "text": "(이미지 클릭시 영상으로 이동)\n안녕하세요 을지대학교 인권센터입니다.\n딥페이크 성범죄 예방을 위해 영상과 자료를 공유합니다.\n영상과 자료를 통해 딥페이크 성범죄 예방에 도움을 얻으시길 바랍니다.\n성 고충 신고 창구: gendereq@eulji.ac.kr",
+  "sub": "일반 공지"
+ },
  {
   "id": "counsel-191",
   "source": "official",
@@ -946,30 +970,6 @@ window.CRAWLED = [
     "end": "2026-09-21"
    }
   ],
-  "sub": "비교과·프로그램"
- },
- {
-  "id": "counsel-179",
-  "source": "official",
-  "board": "counsel",
-  "host": "인권센터",
-  "title": "2026년 멘토링프로그램 'With U' 참여자 팀 발표",
-  "posted": "2026-09-14",
-  "pinned": false,
-  "link": {
-   "url": "https://counsel.eulji.ac.kr/?menuno=4056",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "179",
-    "siteno": "286",
-    "no": "860",
-    "page": "1",
-    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iODYwIiBza2luPSJub3RpY2UiPjwvY2FsbD4="
-   }
-  },
-  "list": "https://counsel.eulji.ac.kr/?menuno=4056",
-  "text": "안녕하세요, 인권센터입니다 :)\n2026-2학기 성남캠퍼스 With U 멘토링 프로그램 참여자 팀을 발표합니다!\n많은 관심과 신청 감사드리며, 내년에도 진행될 예정이니 기대해주세요!\n감사합니다 :)\n문의사항 031-740-7463",
   "sub": "비교과·프로그램"
  },
  {
