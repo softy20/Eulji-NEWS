@@ -1,6 +1,6 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-15T04:32:37.566Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":11},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":10}};
+window.CRAWLED_AT = "2026-11-15T15:58:59.215Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":11},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":9}};
 window.CRAWLED = [
  {
   "id": "counsel-192",
@@ -1383,32 +1383,6 @@ window.CRAWLED = [
   "date": "2026-09-09",
   "place": "성남캠퍼스 창의관 303호 꿈드림",
   "sub": "일반 공지"
- },
- {
-  "id": "lib-NGRiMmU0MDJmQzYwMTFuYlU0ZUtLUjRGUlZpNjAxMkRCMw==",
-  "source": "official",
-  "board": "lib",
-  "host": "학술정보원",
-  "title": "2026학년도 2학기 <독서 챌린지> 안내(~11/15)",
-  "posted": "2026-08-31",
-  "campus": "\"_tscCmtKeyNum_\"",
-  "pinned": false,
-  "link": {
-   "url": "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=NGRiMmU0MDJmQzYwMTFuYlU0ZUtLUjRGUlZpNjAxMkRCMw%3D%3D",
-   "method": "GET"
-  },
-  "text": "안녕하세요 을지대학교 학술정보원입니다.\n2026학년도 2학기 <독서 챌린지> 프로그램 안내 드립니다.\n★ 참여기간 연장 안내!\n-기간 : 2026년 9월 1일 (화)~11월 15일(일)\n- 도서 위치\n(대전) 일현의학관 지하1층 학술정보원 북큐레이션 서가\n(의정부) 일현관 1층 학술정보원 자료실 도서 서가(도서 검색 요망)\n(성남) 범석관 6층 학술정보원 자료열람실 도서 서가(도서 검색 요망)\n-대상 : 재학생 (성남, 대전, 의정부)\n-내용 : 선정 도서를 읽고 하단 구글폼에 독후감 작성 및 제출 (*독후감 1,500자 이내로 작성)\n-경품 : 참여자 전원 마일리지 10점(※ 제출 건수와 관계없이 최대 10점 부여) / 베스트 독후감 당첨 시 맘스터치 기프티콘 증정\n★ 선정 도서는 대출이 가능합니다(전자책 포함) 포스터를 통해 도서 위치를 확인해주세요!★\n&darr; 하단의 링크를 눌러 독후감을 제출해주세요 &darr;\n▶ 독서 챌린지 독후감 제출하기 : https://forms.gle/xEZ4w47BkBBhrH6E9\n+) 노션을 활용해 독서챌린지 선정 도서를 읽고 독후 기록을 남겨보세요!\n▶ [EU있는 기록] 우수 활용 공모전 바로가기\n*을지대학교 학술정보원 전자책 바로가기: /EUL/edata/ebook/EBookPublisher.csp\n&rarr; 학술정보원 홈페이지 로그인 필수!\n첨부파일 :\n2026-2 독서챌린지 독후감 양식.docx [ 0.01028 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'\n전자책안내.jpg [ 0.20039 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'\n2026-2 독서챌린지2.jpg [ 0.32434 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
-  "deadline": "2026-11-15",
-  "date": "2026-09-01",
-  "dateEnd": "2026-11-15",
-  "mileage": 10,
-  "periods": [
-   {
-    "start": "2026-09-01",
-    "end": "2026-11-15"
-   }
-  ],
-  "sub": "공모전"
  },
  {
   "id": "lib-NGRiMmU0MDJmQzYwMTFuYlU0ZUpuUDRGUlZpNjAxMkRCMw==",
