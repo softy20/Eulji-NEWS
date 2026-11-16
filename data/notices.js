@@ -1,7 +1,37 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-15T15:58:59.215Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":11},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":9}};
+window.CRAWLED_AT = "2026-11-16T04:30:20.704Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":12},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":9}};
 window.CRAWLED = [
+ {
+  "id": "innov-1335",
+  "source": "official",
+  "board": "innov",
+  "host": "대학혁신지원사업단",
+  "title": "[한국연구재단] 2026년 대학혁신지원사업 학생참여 수기공모전 개최 안내",
+  "posted": "2026-11-16",
+  "pinned": true,
+  "link": {
+   "url": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "1335",
+    "siteno": "283",
+    "no": "1999",
+    "page": "1",
+    "ztag": "rO0ABXQANzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTk5OSIgc2tpbj0ibm90aWNlX2lubm8iPjwvY2FsbD4="
+   }
+  },
+  "list": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
+  "text": "📢 2026년 대학혁신지원사업 학생참여 수기공모전 개최 안내\n대학혁신지원사업에 참여한 학생 여러분의 다양한 경험과 성장의 순간을 공유하기 위한\n「2026년 대학혁신지원사업 학생참여 수기공모전」이 개최됩니다! 🎉\n📌 공모전 안내\n공모전명: 대학혁신지원사업 수기 공모전\n공모주제: 대학에서 찾은 나의 가능성, 성장의 순간\n응모자격: 대학혁신지원사업 참여대학의 학부생\n공모기간: 2026. 11. 16.(월) ~ 12. 6.(일)\n📝 공모내용 및 작성방법\n대학혁신지원사업 관련 프로그램에 참가한 경험과 성과\n교수 상담, 진로 지도, 멘토링 등 대학 구성원과의 만남을 통해 얻은 변화\n작성분량: A4용지 기준 3페이지 이내(3,000자 이내)\n※ 자세한 신청방법 및 유의사항은 첨부된 공모전 안내자료를 참고해 주세요.\n☎ 문의\n이메일: uiiv2026@gmail.com\n전화: 070-5138-0377\n✨ 대학혁신지원사업에 참여하며 경험한 활동과 성장의 순간을 글로 소개할 수 있는 기회!\n을지대학교 재학생 여러분의 많은 관심과 참여 바랍니다.\n📎 첨부파일\n2026년 대학혁신지원사업 학생참여 수기공모전 안내\n수기공모전 유의사항 및 접수서류",
+  "periods": [
+   {
+    "start": "2026-11-16",
+    "end": "2026-12-06"
+   }
+  ],
+  "sub": "공모전"
+ },
  {
   "id": "counsel-192",
   "source": "official",
