@@ -1,7 +1,83 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-16T19:05:31.933Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":12},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":9}};
+window.CRAWLED_AT = "2026-11-17T06:15:30.802Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":12},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":9},"lib":{"ok":true,"count":10}};
 window.CRAWLED = [
+ {
+  "id": "intl-555",
+  "source": "official",
+  "board": "intl",
+  "host": "국제교류팀",
+  "title": "2026년도 제4회 EU모의토익자가진단 프로그램 신청 안내",
+  "posted": "2026-11-17",
+  "pinned": true,
+  "link": {
+   "url": "https://eulji.ac.kr/international/index.html?menuno=4856",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "555",
+    "siteno": "300",
+    "no": "1238",
+    "page": "1",
+    "ztag": "rO0ABXQAMjxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTIzOCIgc2tpbj0ibm90aWNlIj48L2NhbGw+"
+   }
+  },
+  "list": "https://eulji.ac.kr/international/index.html?menuno=4856",
+  "text": "안녕하세요, 을지대학교 국제교류팀에서는 아래와 같이 <2026년도 제4회 EU 모의토익 자가진단 프로그램>을 시행하오니 많은 참여바랍니다.\n1. 신청일시: 11.17(화)~11.23(월) 16:00까지\n2. 시험일시: 11.26(목)~11.27(금) 00:00~23:59까지\n3. 시험방식: 비대면 온라인시험\n4. 응 시 료: 10,000원\n5. 참가혜택: 응시자에게 마일리지 장학금 10점(=15,000원) 지급(환불자, 미응시자는 마일리지 미지급)\n6. 기한 내 1회 응시/재응시 불가\n7. 환불신청\n⦁환불신청은 11.23(월) 오후 4시까지 신청 가능하며 이후에는 신청이 불가합니다.\n⦁환불은 시험 종료 후 일괄 처리되므로 입금 전 신중히 고려하기 바랍니다.\n⦁환불 신청자는 ☎031.740.7517로 문의하면 신청양식 발송\n◆ 주의사항: 11.23(월) 오후 4시까지 납부해야 접수가 완료되며,\n반드시 신청자 본인 이름과 학부를 기입해 응시료 입금바랍니다.\n※ 신청만 하고 기한 내 응시료를 납부하지 않을 경우 신청이 취소됩니다.",
+  "deadline": "2026-11-23",
+  "mileage": 10,
+  "periods": [
+   {
+    "start": "2026-11-17",
+    "end": "2026-11-23"
+   },
+   {
+    "start": "2026-11-26",
+    "end": "2026-11-27"
+   }
+  ],
+  "sub": "장학·지원"
+ },
+ {
+  "id": "acad-1089",
+  "source": "official",
+  "board": "acad",
+  "host": "학사 공지",
+  "title": "■ 2026-동계 의정부생활관 입사생 모집 안내 ■",
+  "posted": "2026-11-17",
+  "pinned": false,
+  "link": {
+   "url": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "1089",
+    "siteno": "194",
+    "no": "568",
+    "page": "1",
+    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNTY4IiBza2luPSJub3RpY2UiPjwvY2FsbD4="
+   }
+  },
+  "list": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
+  "text": "- 접수방법 안내 -\n학교 홈페이지 공지사항 확인 후\n① 입사신청은 교육정보전산시스템(https://eis.eu.ac.kr)으로만 받습니다.\n* 입사서류( 1.신청서/2.서약서+안전서약서/ 3.'통장사본')는 신청시 '반드시' 업로드 요망\n* 입사서류 미제출 또는 일부 제출시 입사신청이 되지 않음\n② 입사서류는 EIS 업로드 오류 시에 한해 생활관 메일( eudorm@eulji.ac.kr )로 제출합니다.\n※ 입사신청시 본인, 보호자 정보, 통장번호 모두 필수 기입하시기 바랍니다",
+  "sub": "학사"
+ },
+ {
+  "id": "lib-NGRiMmU0MDJmQzYwMTFuYjY0ZUxPVjRGUlZpNjAxMkRBZg==",
+  "source": "official",
+  "board": "lib",
+  "host": "학술정보원",
+  "title": "[성남캠퍼스]11/21(토) 학술정보원 열람실 사용 불가 안내",
+  "posted": "2026-11-17",
+  "campus": "\"_tscCmtKeyNum_\"",
+  "pinned": false,
+  "link": {
+   "url": "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=NGRiMmU0MDJmQzYwMTFuYjY0ZUxPVjRGUlZpNjAxMkRBZg%3D%3D",
+   "method": "GET"
+  },
+  "text": "첨부파일 :\n11.21 이용불가 안내.jpg [ 0.10711 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
+  "sub": "일반 공지"
+ },
  {
   "id": "innov-1335",
   "source": "official",
@@ -648,7 +724,7 @@ window.CRAWLED = [
   "host": "국제교류팀",
   "title": "2026년 하반기 GATE(하와이) 프로그램 신청자 모집 안내(추가모집 ~10.28까지)",
   "posted": "2026-10-07",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://eulji.ac.kr/international/index.html?menuno=4856",
    "method": "POST",
@@ -683,7 +759,7 @@ window.CRAWLED = [
   "host": "국제교류팀",
   "title": "2026년 하반기 GATE(호주) 프로그램 신청자 모집 안내(추가모집 ~10.28까지)",
   "posted": "2026-10-07",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://eulji.ac.kr/international/index.html?menuno=4856",
    "method": "POST",
@@ -973,7 +1049,7 @@ window.CRAWLED = [
   "host": "국제교류팀",
   "title": "2026 2학기 ECS 프로그램(Eulji Culture Sharing) 참가자 모집 안내",
   "posted": "2026-09-15",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://eulji.ac.kr/international/index.html?menuno=4856",
    "method": "POST",
@@ -1087,7 +1163,7 @@ window.CRAWLED = [
   "host": "국제교류팀",
   "title": "2026학년도 2학기 을지대학교 1차 자체한국어시험 안내",
   "posted": "2026-09-07",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://eulji.ac.kr/international/index.html?menuno=4856",
    "method": "POST",
@@ -1196,7 +1272,7 @@ window.CRAWLED = [
   "host": "국제교류팀",
   "title": "2026년 하반기 GATE 프로그램 설명회 안내",
   "posted": "2026-09-02",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://eulji.ac.kr/international/index.html?menuno=4856",
    "method": "POST",
@@ -1220,7 +1296,7 @@ window.CRAWLED = [
   "host": "국제교류팀",
   "title": "2026년 하반기 GATE(하와이) 프로그램 신청자 모집 안내",
   "posted": "2026-09-02",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://eulji.ac.kr/international/index.html?menuno=4856",
    "method": "POST",
@@ -1255,7 +1331,7 @@ window.CRAWLED = [
   "host": "국제교류팀",
   "title": "2026년 하반기 GATE(호주) 프로그램 신청자 모집 안내",
   "posted": "2026-09-02",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://eulji.ac.kr/international/index.html?menuno=4856",
    "method": "POST",
@@ -1539,46 +1615,6 @@ window.CRAWLED = [
   "list": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
   "text": "​★ 선발 마감 공지(20260904 업데이트) ★\n재학생분들의 많은 신청에 감사드리며, 내부 논의를 거쳐 선발인원을 30명으로 확대하여 확정 문자 발송을 완료하였습니다.\n다시 한번 많은 성원에 감사드립니다.\n앞으로도 기획조정처 EULJISOK 사업에 많은 관심 가져주시길 바랍니다.\n★ 선발기간 연장 안내 ★\n보다 많은 재학생들에게 대학혁신지원사업 프로그램 참여 기회와 서적구입비 지원 혜택을 제공하고자 신청기간을 9.2.(수)까지 연장하오니 관심있는 학생들의 많은 신청 바랍니다.\n관련하여 기존 안내된 세부일정이 일부 변경될 수 있는 점 양해 부탁드리며, 선발학생 대상으로 추후 별도 안내드리겠습니다.\n안녕하십니까, 을지대학교 기획조정처 기획조정팀 EULJISOK입니다.\n을지대학교 재학생들의 전공 및 교양과목 학습 기본권을 신장하고, 도서 구입에 대한 경제적 부담 완화와 건전한 학습자료 이용 및 저작권법 위반 예방을 위하여 대학 교육과정 관련 전공·교양 도서 구입비를 지원하고자 합니다.\n본 사업은 학생들의 필수 학습자료에 대한 접근성을 높이고 안정적인 학습 여건을 조성하여, 폭넓은 지식 탐구를 통한 학업 성취도 향상과 자기주도적 학습역량 강화 및 진로설계에 도움이 되고자 마련되었습니다.\n모집개요\n◦신청기간: '26.8.26.(수) ~ 8.30.(일)\n◦선발인원: 25명\n◦지원내용: 구입하는 전공 및 교양서적 1권당 80% 지원(1인 최대 10만원 한도)\n- 서적 구입비의 20%는 학생 자부담이며, 서적구입은 성남캠퍼스 교내서점을 통해서만 가능함\n◦지원자격: 을지대학교 1~4학년 재학생\n◦신청방법: 대학혁신지원사업단 홈페이지 접속 &rarr; 공지사항 확인 &rarr; 신청서(구글폼) 작성\n- 구글폼 링크: https://forms.gle/mYNDhLGn4Budm1167\n◦구입절차(구체적인 구입절차에 대해서는 선발학생 대상으로 재안내 예정)\n① 대상자 선발(문자 발송 예정)\n② 구매서적 리스트 확인\n③ 도서구입(교내서점을 통해서만 가능, 20% 학생 자부담)\n유의사항\n◦신청자는 사전에 공고문 내용을 숙지한 후 신청하여야 하며, 그렇지 아니하여 발생한 불이익 및 문제는 신청자 책임으로 함\n◦전화 미수신 및 문자 미확인 등의 사유로 연락이 불가능하거나, 보완 서류 요청에 응하지 않을 경우 선발에서 제외함\n◦제출서류의 작성정보가 부정확하거나 허위사실 기재, 또는 제출서류 및 자부담금 결제 누락 시 지원 중단 및 환수조치를 진행함\n◦교내서점 미입고 서적은 별도 주문 및 입고 절차로 인해 즉시구매가 어려울 수 있으며, 수령을 위해 재방문이 필요할 수 있음\n◦교내서점 미입고 서적 또는 단가 상황에 따라 신청된 서적 리스트는 변경될 수 있음\n◦공고된 내용 외 운영 기타 사항은 기획조정처 기획조정팀 EULJISOK에서 결정함\n문의처 기획조정처 기획조정팀 EULJISOK(031-740-7430)\n관심있는 재학생들의 많은 참여 부탁드립니다.",
   "deadline": "2026-09-02",
-  "sub": "비교과·프로그램"
- },
- {
-  "id": "intl-544",
-  "source": "official",
-  "board": "intl",
-  "host": "국제교류팀",
-  "title": "2026학년도 2학기 국제어학 프로그램(EAC) 수강모집 안내",
-  "posted": "2026-08-25",
-  "pinned": false,
-  "link": {
-   "url": "https://eulji.ac.kr/international/index.html?menuno=4856",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "544",
-    "siteno": "300",
-    "no": "1238",
-    "page": "1",
-    "ztag": "rO0ABXQAMjxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTIzOCIgc2tpbj0ibm90aWNlIj48L2NhbGw+"
-   }
-  },
-  "list": "https://eulji.ac.kr/international/index.html?menuno=4856",
-  "text": "국제어학프로그램 EAC (구ELP) 수강모집 안내\n1. 대 상: 외국어능력 향상 및 외국어분야 졸업인증제 대체희망자\n2. 신청방법: 링크접속\n(https://eu.ttceducation.net/campusedu/page.php?p=sub06) &rarr; 수강신청하기\n3. 이수기준: 반배정을 위한 레벨테스트 응시 + 종강테스트 응시 + 출석률 80% 이상\n4. 수 강 료: EAC(단기과정) 20만원\n5. 신청기간: 8.24(월)~9.7(월) 16:00까지(EAC+과정은 신청마감)\n6. 수업기간: 9.7(월)~12.1(화) / 총 10주\n7. 이수관련 증빙자료 제출 절차\n■ 22학년도 입학생부터: 본인이 직접 EIS 업로드\n■ 21학년도 입학생까지: 이수증 발급 &rarr; 국제교류팀 이메일(inter@eulji.ac.kr)로 이수증 제출\n8. 졸업인증 및 기타 안내\n■ 22학년도 입학생부터: EAC 한 개 과정 이수(수료)하면 외국어분야 졸업인증 대체가능\n■ 21학년도 입학생까지: EAC 두 개 과정 이수(수료)하면 외국어분야 졸업인증 대체가능\n※ 과거 ELP를 한개 강좌 이수했을 경우 EAC 한개 과정만 이수하면 외국어분야 졸업인증 대체가능\n9. 마일리지 장학금\n■ EAC(단기과정) 수료자에게 마일리지 50점 지급\n※ 정규학기 재학생에게만 마일리지 장학금이 지급되며 휴학생, 정규학기 초과자, 수료생 등은 마일리지 장학금이 지급되지 않습니다.\n10. 주의사항\n■ 본 강좌는 Zoom Live수업으로 녹화강의도 제공되고 있음\n■ 녹화강의 수강 후 별도의 방법으로 수강하였음을 인증해야함\n■ 프로그램 종료 후 일주일 이내에 이수증 제출 바람\n11. 환불\n※ 환불은 신청 후 약 1~2주 내외 소요됩니다.\n■ 어학상담실(031-740-7517)로 환불문의 시 신청양식 발송\n■ 환불규정\nEAC과정(단기)\n- 개강일 전: 전액환불\n- 개강 ~ 수업시간1/3 이전: 2/3 환불(개강일 포함)\n- 수업시간1/3~수업시간1/2까지: 1/2 환불\n- 수업시간 1/2경과: 미환불\n12. 문의처 : 자세한 사항은 어학상담실(031-740-7517)로 연락하거나 붙임 홍보물을 참고해주세요",
-  "deadline": "2026-09-07",
-  "mileage": 50,
-  "periods": [
-   {
-    "start": "2026-08-24",
-    "end": "2026-09-07"
-   },
-   {
-    "start": "2026-09-07",
-    "end": "2026-12-01"
-   },
-   {
-    "start": "2027-01-03",
-    "end": "2027-01-02"
-   }
-  ],
   "sub": "비교과·프로그램"
  },
  {
