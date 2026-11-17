@@ -1,7 +1,68 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-17T06:15:30.802Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":7},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":12},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":9},"lib":{"ok":true,"count":10}};
+window.CRAWLED_AT = "2026-11-17T18:00:40.679Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":12},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":9},"lib":{"ok":true,"count":10}};
 window.CRAWLED = [
+ {
+  "id": "job-676",
+  "source": "official",
+  "board": "job",
+  "host": "진로취창업센터",
+  "title": "[성남시] 2027년 동계 대학생 지방행정체험 연수생 모집 안내",
+  "posted": "2026-11-17",
+  "pinned": false,
+  "link": {
+   "url": "https://job.eulji.ac.kr/index.html?menuno=4371",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "676",
+    "siteno": "285",
+    "no": "1173",
+    "page": "1",
+    "ztag": "rO0ABXQAMjxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTE3MyIgc2tpbj0ibm90aWNlIj48L2NhbGw+"
+   }
+  },
+  "list": "https://job.eulji.ac.kr/index.html?menuno=4371",
+  "text": "< 2027년 동계 대학생 지방행정체험 연수생 모집 안내 >\n○ 모집기간: 2026. 11. 16.(월) ~ 12. 7.(월) 18:00 [21일간]\n○ 접수방법: 성남청년다해(성남청년정보플랫폼) 접수\n- 신청/참여->지원사업->2027년 동계 대학생 지방행정체험 연수생 모집\n○ 연수내용\n- 기 간: 2027. 1. 5.(화) ~ 2. 24.(수)[35일간]\n- 시 간: 월~금요일(법정공휴일 제외), 1일 3시간 이내\n※ 연수시간(오전 또는 오후)은 연수부서 상황에 따라 자율결정\n※ 도서관 등은 원활한 추진을 위해 주말에 연수 진행 가능\n※ 기존 참여자 참여 불가\n- 자 격: 공고일(11. 16.) 기준 성남시에 1년 이상 주민등록이 되어있는 대학생\n- 선발인원: 202명(※선발기준 및 상세자격은 성남시 공고 및 성남청년다해 참고)\n○ 문의사항: 성남시청 청년청소년과(☏ 031-729-8764)",
+  "deadline": "2026-12-07",
+  "date": "2027-01-05",
+  "dateEnd": "2027-02-24",
+  "periods": [
+   {
+    "start": "2026-11-16",
+    "end": "2026-12-07"
+   },
+   {
+    "start": "2027-01-05",
+    "end": "2027-02-24"
+   }
+  ],
+  "sub": "장학·지원"
+ },
+ {
+  "id": "job-675",
+  "source": "official",
+  "board": "job",
+  "host": "진로취창업센터",
+  "title": "[성남시]「미취업 청년 지원사업(ALL-Pass)」안내",
+  "posted": "2026-11-17",
+  "pinned": false,
+  "link": {
+   "url": "https://job.eulji.ac.kr/index.html?menuno=4371",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "675",
+    "siteno": "285",
+    "no": "1173",
+    "page": "1",
+    "ztag": "rO0ABXQAMjxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTE3MyIgc2tpbj0ibm90aWNlIj48L2NhbGw+"
+   }
+  },
+  "list": "https://job.eulji.ac.kr/index.html?menuno=4371",
+  "text": "「미취업 청년 지원사업(ALL-Pass)」\n○ 신청기간: 상시접수\n○ 신청대상: 신청일 기준 1년 이상 성남시에 주민등록을 둔 19세~39세 미취업 청년\n▶ (미 취 업)‘시험응시일’ 또는 ‘수강시작일~수강완료일' 기준 미취업자\n※ 1년 이하 비정규직 단기근로청년 및 대학생 지원 가능\n○ 사업규모: 7,500명\n○ 지원내용: 1인 100만원 이내 실비《자격증 시험 응시료 및 학원 수강료》\n※ 응시횟수·수강횟수 및 신청횟수 제한 없음(지원한도 내 다회 신청가능)\n○ 지원분야: 총1,011종(어학 20종, 한국사능력검정시험, 국가공인자격증 990종)\n○ 신청방법: 온라인 신청(성남 청년정보 플렛폼 - 성남청년다해)\n○ 지급방법: 계좌입금(현금)\n○ 문 의: 성남시 청년청소년과(☎031-729-8504)",
+  "sub": "일반 공지"
+ },
  {
   "id": "intl-555",
   "source": "official",
@@ -396,7 +457,7 @@ window.CRAWLED = [
   "host": "진로취창업센터",
   "title": "2026 EU 취업박람회 1차 사전신청 안내(~11/6)",
   "posted": "2026-11-02",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://job.eulji.ac.kr/index.html?menuno=4371",
    "method": "POST",
