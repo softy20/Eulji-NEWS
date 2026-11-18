@@ -1,7 +1,33 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-18T05:42:25.518Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":11},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":9},"lib":{"ok":true,"count":10}};
+window.CRAWLED_AT = "2026-11-18T17:42:31.155Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":10},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":11},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":9},"lib":{"ok":true,"count":10}};
 window.CRAWLED = [
+ {
+  "id": "job-677",
+  "source": "official",
+  "board": "job",
+  "host": "진로취창업센터",
+  "title": "[성남시] 수정유스센터 개관식 및 개관행사 안내",
+  "posted": "2026-11-18",
+  "pinned": false,
+  "link": {
+   "url": "https://job.eulji.ac.kr/index.html?menuno=4371",
+   "method": "POST",
+   "fields": {
+    "act": "view",
+    "bbsno": "677",
+    "siteno": "285",
+    "no": "1173",
+    "page": "1",
+    "ztag": "rO0ABXQAMjxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTE3MyIgc2tpbj0ibm90aWNlIj48L2NhbGw+"
+   }
+  },
+  "list": "https://job.eulji.ac.kr/index.html?menuno=4371",
+  "text": "다시 만나는 수정유스센터 개관식 및 개관행사 『안녕(Hi) 수정유스센터』\n- 일 시: 2026. 11. 28.(토) 13:30 ~ 16:30\n- 장 소: 수정유스센터 공연장 등\n- 대 상: 청소년·청년 및 지역주민\n- 주요내용: 비보이팀 진조크루 축하공연, 개관식, 특별체험단,\n원데이클래스(줌바댄스, K-POP댄스, 과일 찹쌀떡 만들기), 미니 마음상담소 등",
+  "date": "2026-11-28",
+  "place": "수정유스센터 공연장 등",
+  "sub": "일반 공지"
+ },
  {
   "id": "job-676",
   "source": "official",
