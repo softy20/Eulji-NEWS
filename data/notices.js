@@ -1,6 +1,6 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-17T18:00:40.679Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":12},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":9},"lib":{"ok":true,"count":10}};
+window.CRAWLED_AT = "2026-11-18T05:42:25.518Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":11},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":9},"lib":{"ok":true,"count":10}};
 window.CRAWLED = [
  {
   "id": "job-676",
@@ -1858,30 +1858,5 @@ window.CRAWLED = [
   },
   "text": "첨부파일 :\n2026학년도 2학기 운영안내.jpg [ 0.10539 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
   "sub": "일반 공지"
- },
- {
-  "id": "innov-1321",
-  "source": "official",
-  "board": "innov",
-  "host": "대학혁신지원사업단",
-  "title": "[한마음봉사단] 사회봉사 기초교육 - 자원봉사 기초교육, 2026 제25회 성남시 자원봉사 박람회 자원봉사자 모집 안내",
-  "posted": "2026-08-20",
-  "pinned": false,
-  "link": {
-   "url": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "1321",
-    "siteno": "283",
-    "no": "1999",
-    "page": "1",
-    "ztag": "rO0ABXQANzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTk5OSIgc2tpbj0ibm90aWNlX2lubm8iPjwvY2FsbD4="
-   }
-  },
-  "list": "https://www.eulji.ac.kr/renewal-innovation/index.html?menuno=6006",
-  "text": "안녕하세요 한마음봉사단입니다.\n성남시자원봉사센터에서 [2026 제25회 성남시 자원봉사 박람회 자원봉사자]를 모집함에 따라 안내드립니다.\n많은 재학생분들의 신청바랍니다.\n1. 일 시 : 2026.09.12.(토) 10:00 &sim; 18:00(행사 시작시간, 14:00)\n※ 자원봉사자는 시청 1층 로비 집합\n2. 장 소 : 성남시청 광장\n3. 모집기간 : 2026.09.06.(일)까지(발 표 일 : 2026.09.07.(월))\n※ 상기 일정은 변동 가능\n4. 모집인원 : 을지대학교 재학생 60명\n가. 2026학년도 자원봉사 기초교육(5.21.(목) / 5.27.(수)) 수강자 우선 선발\n5. 활동내용 : 현장 안내 등 제25회 성남시자원봉사박람회 행사 지원업무\n6. 신청방법 : 구글폼 신청(https://forms.gle/8TmouA6afJ8kcxgr7)\n7. 문 의 : 한마음봉사단 김채은(031-740-7105)\n8. 활동혜택\n가. 봉사시간 8시간\n나. 실비 정액 지급(식비 + 교통비(13,000원))\n다. 간식, 생수 등 제공\n9. 행사일정\n가. 14:00~14:30 식전 축하공연(부스운영준비 13:30 종료)\n나. 14:30~15:10 1부 개회 및 기념식(참가단체 전원 참석)\n다. 15:10~16:40 2부 본행사(단체 체험부스 운영)\n라. 16:40~17:00 3부 어울림마당(부스운영 종료 후 전체 무대 앞 집합)",
-  "deadline": "2026-09-07",
-  "sub": "비교과·프로그램"
  }
 ];
