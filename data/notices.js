@@ -1,7 +1,23 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-18T17:42:31.155Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":10},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":11},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":9},"lib":{"ok":true,"count":10}};
+window.CRAWLED_AT = "2026-11-19T05:41:18.452Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":5},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":true,"count":11},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":9}};
 window.CRAWLED = [
+ {
+  "id": "lib-NGRiMmU0MDJmQzYwMTFuYjY0ZUxPVjRGUlZpNjAxMkRBZg==",
+  "source": "official",
+  "board": "lib",
+  "host": "학술정보원",
+  "title": "[성남캠퍼스]11/21(토) 학술정보원 열람실 사용 불가 안내",
+  "posted": "2026-11-19",
+  "campus": "\"_tscCmtKeyNum_\"",
+  "pinned": false,
+  "link": {
+   "url": "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=NGRiMmU0MDJmQzYwMTFuYjY0ZUxPVjRGUlZpNjAxMkRBZg%3D%3D",
+   "method": "GET"
+  },
+  "text": "첨부파일 :\n11.21 이용불가 안내.jpg [ 0.10711 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
+  "sub": "일반 공지"
+ },
  {
   "id": "job-677",
   "source": "official",
@@ -148,22 +164,6 @@ window.CRAWLED = [
   "list": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
   "text": "- 접수방법 안내 -\n학교 홈페이지 공지사항 확인 후\n① 입사신청은 교육정보전산시스템(https://eis.eu.ac.kr)으로만 받습니다.\n* 입사서류( 1.신청서/2.서약서+안전서약서/ 3.'통장사본')는 신청시 '반드시' 업로드 요망\n* 입사서류 미제출 또는 일부 제출시 입사신청이 되지 않음\n② 입사서류는 EIS 업로드 오류 시에 한해 생활관 메일( eudorm@eulji.ac.kr )로 제출합니다.\n※ 입사신청시 본인, 보호자 정보, 통장번호 모두 필수 기입하시기 바랍니다",
   "sub": "학사"
- },
- {
-  "id": "lib-NGRiMmU0MDJmQzYwMTFuYjY0ZUxPVjRGUlZpNjAxMkRBZg==",
-  "source": "official",
-  "board": "lib",
-  "host": "학술정보원",
-  "title": "[성남캠퍼스]11/21(토) 학술정보원 열람실 사용 불가 안내",
-  "posted": "2026-11-17",
-  "campus": "\"_tscCmtKeyNum_\"",
-  "pinned": false,
-  "link": {
-   "url": "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=NGRiMmU0MDJmQzYwMTFuYjY0ZUxPVjRGUlZpNjAxMkRBZg%3D%3D",
-   "method": "GET"
-  },
-  "text": "첨부파일 :\n11.21 이용불가 안내.jpg [ 0.10711 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
-  "sub": "일반 공지"
  },
  {
   "id": "innov-1335",
@@ -1818,71 +1818,5 @@ window.CRAWLED = [
    }
   ],
   "sub": "비교과·프로그램"
- },
- {
-  "id": "job-506",
-  "source": "official",
-  "board": "job",
-  "host": "진로취창업센터",
-  "title": "[공지] 꿈드림 리뉴얼 오픈 사전예약 안내",
-  "posted": "2026-08-21",
-  "pinned": false,
-  "link": {
-   "url": "https://job.eulji.ac.kr/index.html?menuno=4371",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "506",
-    "siteno": "285",
-    "no": "1173",
-    "page": "1",
-    "ztag": "rO0ABXQAMjxjYWxsIHR5cGU9ImJvYXJkIiBubz0iMTE3MyIgc2tpbj0ibm90aWNlIj48L2NhbGw+"
-   }
-  },
-  "list": "https://job.eulji.ac.kr/index.html?menuno=4371",
-  "text": "🎉 꿈드림 리뉴얼 오픈 사전예약\n새롭게 달라진 꿈드림, 직접 이용해보세요!\n진로·취창업센터의 학생 중심 공간 ‘꿈드림’이 새롭게 단장하여 오픈합니다.\n새롭게 바뀐 꿈드림에서 진로·취업 지원서비스를 이용하고, 학생 여러분의 공간으로 자유롭게 이용해보세요!\n🎁 사전예약 선착순 100명에게 리뉴얼 오픈 기념 굿즈를 드립니다!\n📌 꿈드림 리뉴얼 오픈\n■ 일시: 2026. 9. 1.(화)\n■ 장소: 성남캠퍼스 창의관 303호 꿈드림\n■ 대상: 을지대학교 재학생 누구나\n■ 내용: 커리어 Lounge, 큐브 Zone, 드림커넥트 Zone 등 공간 이용 및 진로·취업 지원서비스\n■ 혜택: 사전예약 선착순 100명 리뉴얼 오픈 기념 굿즈 제공\n※ 굿즈는 사전예약 신청자 중 선착순 100명에게 제공됩니다.\n※ 굿즈 수령을 위해 행사 당일 꿈드림 방문 및 본인 확인이 필요합니다.",
-  "date": "2026-09-01",
-  "place": "성남캠퍼스 창의관 303호 꿈드림",
-  "sub": "일반 공지"
- },
- {
-  "id": "acad-1081",
-  "source": "official",
-  "board": "acad",
-  "host": "학사 공지",
-  "title": "2026학년도 2학기 출판물 불법복제 예방활동 안내",
-  "posted": "2026-08-21",
-  "pinned": false,
-  "link": {
-   "url": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "1081",
-    "siteno": "194",
-    "no": "568",
-    "page": "1",
-    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNTY4IiBza2luPSJub3RpY2UiPjwvY2FsbD4="
-   }
-  },
-  "list": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
-  "text": "대학가 신학기 출판물 불법복제 예방활동 안내\n대학(교) 내 불법복제물 제작과 이용 등 불법유통 예방을 위해 학생에 대한 저작권 보호 인식개선과 복사업체를 통한 교재 불법복사 및 PDF파일 불법공유 등 저작권 침해행위가 발생하지 않도록 아래의 안내사항을 확인하시고, 적극적으로 협조해주시기 바랍니다.\n1. 저작권법 준수\n- 저작권자의 허락없이 도서 등 저작물을 복제(복사, 스캔, PDF파일 공유 등)하는 행위는「저작권법」위반행위임.\n- 저작권법 위반 시, 5년 이하의 징역 또는 5천만 원 이하의 형사처벌과 손해배상 등 민소소송의 대상이 될 수 있음.\n- 교내에서 불법복제물(스캔, PDF파일) 공유 및 교재 등 출판물을 복제·제본행위를 일절 금지함.\n2. 복사업소(무인스캔방 포함) 유의사항\n- 저작권자의 허락 없이 교재 등을 복사 및 스캔하는 행위는 불법임.\n- 전자책 파일형태(PDF 스캔본 등) 공유도「저작권법」위반행위임.\n- 복사집 및 무인스캔방에서 개인의 스캔 행위는 사적이용을 위한 복제에 해당되지 않을 수 있으니 주의 요함.",
-  "sub": "학사"
- },
- {
-  "id": "lib-NGRiMmU0MDJmQzYwMTFuYlU0ZUxPVjRGUlZpNjAxMkRCMw==",
-  "source": "official",
-  "board": "lib",
-  "host": "학술정보원",
-  "title": "2026학년도 2학기 학술정보원 운영시간 안내",
-  "posted": "2026-08-21",
-  "campus": "\"_tscCmtKeyNum_\"",
-  "pinned": false,
-  "link": {
-   "url": "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=NGRiMmU0MDJmQzYwMTFuYlU0ZUxPVjRGUlZpNjAxMkRCMw%3D%3D",
-   "method": "GET"
-  },
-  "text": "첨부파일 :\n2026학년도 2학기 운영안내.jpg [ 0.10539 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
-  "sub": "일반 공지"
  }
 ];
