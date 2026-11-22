@@ -1,6 +1,6 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-22T04:48:12.635Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":3},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":9}};
+window.CRAWLED_AT = "2026-11-22T16:47:55.344Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":3},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":8}};
 window.CRAWLED = [
  {
   "id": "acad-1090",
@@ -25,22 +25,6 @@ window.CRAWLED = [
   "list": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
   "text": "- 접수방법 안내 -\n학교 홈페이지 공지사항 확인 후\n① 입사신청은 교육정보전산시스템(https://eis.eu.ac.kr)으로만 받습니다.\n* 입사서류( 1.신청서/2.서약서+안전서약서/ 3.'통장사본')는 신청시 '반드시' 업로드 요망\n* 입사서류 미제출 또는 일부 제출시 입사신청이 되지 않음\n② 입사서류는 EIS 업로드 오류 시에 한해 생활관 메일(eudorm@eulji.ac.kr)로 제출합니다.\n※ 입사신청시 본인, 보호자 정보, 통장번호 모두 필수 기입하시기 바랍니다.",
   "sub": "학사"
- },
- {
-  "id": "lib-NGRiMmU0MDJmQzYwMTFuYjY0ZUxPVjRGUlZpNjAxMkRBZg==",
-  "source": "official",
-  "board": "lib",
-  "host": "학술정보원",
-  "title": "[성남캠퍼스]11/21(토) 학술정보원 열람실 사용 불가 안내",
-  "posted": "2026-11-19",
-  "campus": "\"_tscCmtKeyNum_\"",
-  "pinned": false,
-  "link": {
-   "url": "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=NGRiMmU0MDJmQzYwMTFuYjY0ZUxPVjRGUlZpNjAxMkRBZg%3D%3D",
-   "method": "GET"
-  },
-  "text": "첨부파일 :\n11.21 이용불가 안내.jpg [ 0.10711 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
-  "sub": "일반 공지"
  },
  {
   "id": "job-677",
