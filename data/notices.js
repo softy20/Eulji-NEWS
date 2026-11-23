@@ -1,7 +1,23 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-23T05:27:17.461Z";
+window.CRAWLED_AT = "2026-11-23T20:44:30.475Z";
 window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":3},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":8}};
 window.CRAWLED = [
+ {
+  "id": "lib-NGRiMmU0MDJmQzYwMTFuYjY0ZUpuUDRGUlZpNjAxMkRBZg==",
+  "source": "official",
+  "board": "lib",
+  "host": "학술정보원",
+  "title": "[성남캠퍼스] 기말고사 기간 학술정보원 연장개관 안내",
+  "posted": "2026-11-23",
+  "campus": "\"_tscCmtKeyNum_\"",
+  "pinned": false,
+  "link": {
+   "url": "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=NGRiMmU0MDJmQzYwMTFuYjY0ZUpuUDRGUlZpNjAxMkRBZg%3D%3D",
+   "method": "GET"
+  },
+  "text": "첨부파일 :\n을지대학교 성남캠퍼스 학술정보원 기말고사 기간 연장개관 안내문 1부.jpg [ 0.12500 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
+  "sub": "일반 공지"
+ },
  {
   "id": "acad-1090",
   "source": "official",
@@ -713,7 +729,7 @@ window.CRAWLED = [
   "host": "학사 공지",
   "title": "2026학년도 2학기 강의평가 실시 안내(2026.11.4 수정)",
   "posted": "2026-10-16",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
    "method": "POST",
@@ -1041,22 +1057,6 @@ window.CRAWLED = [
   "list": "https://ctl.eulji.ac.kr/?menuno=4104",
   "text": "안녕하세요. 교수학습지원센터입니다.\n2026-2학기 전공탐색동아리 선정팀을 다음과 같이 안내 드립니다.\n- 다 음 -\n[선정 명단]\n1. 아웃링크(out-link)\n2. 심리온(心理ON)\n3. SHOT\n4. 내일의 미래\n5. 새싹연구소\n6. Import Pass(임포트 패스)\n7. 잡월드\n8. 위생사관학교\n9. Cosight\n10. 캡스톤 메이커스\n11. 코스티스\n12. Food Lab\n※ 지원 동아리 선정은 신청서와 활동계획서를 심사하여 기준에 가장 적합한 팀으로 선정되었습니다.\n전공탐색동아리에 선정된 동아리원들은 첨부된 활동가이드 참고하시어 기간 내 동아리 오리엔테이션 참석 및 카페 가입 후 가입인사 바랍니다.\n※ 아래 붉은 글씨로 된 내용 반드시 확인하고 꼭! 숙지하여 주시기 바랍니다.\n1. 팀 당 1명 이상 오리엔테이션 필참 (9/22(화)14:00, 15:00 2회 중 1회)\n- 오리엔테이션 참석 일정 설문: https://forms.gle/o5xmctKcAyY576kR7\n- 수업 등 공식적인 일정으로 참석 불가 시 위 구글 폼 내 증빙서류 제출 후 LMS 내 오리엔테이션 영상 필수 수강\n- 성남캠퍼스: 박애관 505호 하이브리드 강의실\n- 의정부캠퍼스: LMS 내 오리엔테이션 영상 필수 수강\n2. 네이버 카페 가입 후 가입인사 필수(기간 내 업로드 불가 시, 사유 불문 선정 취소)\n- 네이버 카페 주소 : cafe.naver.com/euctl\n- 가입 승인에 2~3일 소요되므로 미리 가입해야 합니다.\n- 가입인사 입력 기간 : ~10월 2일(금) 23:59 까지\n★3. 교육정보전산시스템(EIS)에서 비교과 프로그램 신청 여부 확인\n- 신청서 학번 오류 및 오기입 여부 확인되었는지 개별 확인 필수! ★\n★4. 개별 및 팀별 활동 중단 시 다음학기 지원할 수 없으며, 동아리 선정 후 중도포기시 활동지원금 환수 ★\n※ 문의: 031-740-7156 / euctl102@naver.com\n(근무시간 평일 9시~18시, 점심시간 12시~13시 제외)",
   "sub": "일반 공지"
- },
- {
-  "id": "lib-NGRiMmU0MDJmQzYwMTFuYkU0ZUlqTDRGUlZpNjAxMkRBbg==",
-  "source": "official",
-  "board": "lib",
-  "host": "학술정보원",
-  "title": "KISS 2026 2학기 온라인 교육 안내(학부생, 대학원생 대상)",
-  "posted": "2026-09-21",
-  "campus": "\"_tscCmtKeyNum_\"",
-  "pinned": false,
-  "link": {
-   "url": "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=NGRiMmU0MDJmQzYwMTFuYkU0ZUlqTDRGUlZpNjAxMkRBbg%3D%3D",
-   "method": "GET"
-  },
-  "text": "KISS에서 2026학년도 2학기 온라인 교육으로 'KISS AI 활용법', '디지털 리터러시', '논문 작성법', '면접 및 스 피치' 교육을\n아래와 같이 진행하오니 많은 관심과 참여 부탁드립니다.\n※ 본 교육 및 이벤트는 한국학술정보(KISS)에서 주최하는 것으로 관련 문의는 포스터 하단 교육 문의처로 연락주시기 바랍니다.\n※ 포스터의 교육 일정별 신청하기 버튼를 클릭하시면 교육 신청이 가능합니다.",
-  "sub": "비교과·프로그램"
  },
  {
   "id": "innov-1327",
