@@ -1,6 +1,6 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-23T20:44:30.475Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":3},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":8}};
+window.CRAWLED_AT = "2026-11-24T08:06:27.635Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":2},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":8}};
 window.CRAWLED = [
  {
   "id": "lib-NGRiMmU0MDJmQzYwMTFuYjY0ZUpuUDRGUlZpNjAxMkRBZg==",
@@ -1637,31 +1637,6 @@ window.CRAWLED = [
   "list": "https://eulji.ac.kr/international/index.html?menuno=4856",
   "text": "2026학년도 후기 대학원 영어시험 대체과정을 이수한 학생들의 결과를 안내드립니다.\n합격자분들께는 이수증을 이메일로 개별 발송드렸으니 확인해 주시기 바랍니다.\n아울러, 외국어시험 면제를 위해서는 대학원 홈페이지의 공지를 참고하여 신청을 완료해야 최종 인정됩니다.",
   "sub": "일반 공지"
- },
- {
-  "id": "ctl-149",
-  "source": "official",
-  "board": "ctl",
-  "host": "교수학습지원센터",
-  "title": "2026-2 Learning Mate 신청 안내",
-  "posted": "2026-08-26",
-  "pinned": false,
-  "link": {
-   "url": "https://ctl.eulji.ac.kr/?menuno=4104",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "149",
-    "siteno": "284",
-    "no": "895",
-    "page": "1",
-    "ztag": "rO0ABXQALzxjYWxsIHR5cGU9ImJvYXJkIiBubz0iODk1IiBza2luPSJmcmVlIj48L2NhbGw+"
-   }
-  },
-  "list": "https://ctl.eulji.ac.kr/?menuno=4104",
-  "text": "안녕하십니까? 교수학습지원센터(CTL)입니다.\n2026학년도 2학기 Learning Mate 신청을 다음과 같이 안내드립니다.\n재학생 여러분들의 많은 관심과 참여 부탁드립니다.\n감사합니다.\n- 다 음 -\n1. 신청 안내\n1) 신청방법 : 팀별로 첨부된 신청서를 작성하여 메일 제출 (euctl102@naver.com)\n2) 신청기간 : ~9월 11일(금) 23:59까지\n3) 신청대상 : 4~6인 재학생 팀 (동일 Learning Mate 중복지원 불가)\n4) 운영일정\n2. 유의사항 ★★★\n1) 모든 운영 기준은 첨부된 활동가이드에 따름 (반드시 숙지 후 신청)\n2) 모든 서류 미제출 시 수료로 인정되지 않음\n3) 마일리지 장학금은 수료 시 자동신청이나 장학금 지급은 학생지원팀에서 지급 자격을 확인해야 함\n&rarr; 프로그램을 수료하면 CTL에서는 수료자 명단을 학생지원팀에 제공하여 자동 신청됨\n그러나 학생 개개인의 상벌내역, 학점, 기타 장학금 수혜 등 학생지원팀에서 지정한 장학금 지급\n자격에 따라 심사를 거쳐 지급이 완료됨 (학생지원팀 개별문의 : 031-740-7111)\n4) 활동 종료 후 진행되는 성과발표회는 상위 10팀(예정)을 선정하여 성과발표를 진행함(5분 내외)\n3. 문의 및 궁금증 해결\n1) 방문 : 본관 102호 (근무시간 평일 9:00~18:00, 점심시간 12:00~13:00)\n2) 전화 : 031-740-7278\n3) 이메일 : euctl102@naver.com\n4) 홈페이지 : ctl.eulji.ac.kr\n5) 카카오톡 채널 : euctl",
-  "deadline": "2026-09-11",
-  "sub": "장학·지원"
  },
  {
   "id": "innov-1324",
