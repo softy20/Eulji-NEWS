@@ -1,5 +1,5 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-24T08:06:27.635Z";
+window.CRAWLED_AT = "2026-11-24T19:50:16.145Z";
 window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":2},"intl":{"ok":true,"count":11},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":2},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":8}};
 window.CRAWLED = [
  {
