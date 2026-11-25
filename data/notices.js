@@ -1,6 +1,6 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-25T06:44:07.979Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":3},"intl":{"ok":true,"count":10},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":5},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":8}};
+window.CRAWLED_AT = "2026-11-25T18:55:01.827Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":3},"intl":{"ok":true,"count":10},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":5},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":7}};
 window.CRAWLED = [
  {
   "id": "ctl-152",
@@ -1244,22 +1244,6 @@ window.CRAWLED = [
     "end": "2026-09-21"
    }
   ],
-  "sub": "비교과·프로그램"
- },
- {
-  "id": "lib-NGRiMmU0MDJmQzYwMTFuYk00ZU5XZDRGUlZpNjAxMkRBdg==",
-  "source": "official",
-  "board": "lib",
-  "host": "학술정보원",
-  "title": "2026학년도 2학기 학술연구 지원 교육 안내",
-  "posted": "2026-09-14",
-  "campus": "\"_tscCmtKeyNum_\"",
-  "pinned": false,
-  "link": {
-   "url": "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=NGRiMmU0MDJmQzYwMTFuYk00ZU5XZDRGUlZpNjAxMkRBdg%3D%3D",
-   "method": "GET"
-  },
-  "text": "첨부파일 :\n2026학년도 2학기 학술연구 지원 교육 포스터.jpg [ 0.62192 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
   "sub": "비교과·프로그램"
  },
  {
