@@ -1,6 +1,6 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-26T06:35:25.532Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":3},"intl":{"ok":true,"count":10},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":5},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":7},"lib":{"ok":true,"count":7}};
+window.CRAWLED_AT = "2026-11-26T18:44:33.060Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":3},"intl":{"ok":true,"count":10},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":5},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":7},"lib":{"ok":true,"count":6}};
 window.CRAWLED = [
  {
   "id": "ctl-152",
@@ -492,22 +492,6 @@ window.CRAWLED = [
    "method": "GET"
   },
   "text": "누리미디어에서 DBPIA 11월 온라인 교육으로 'AI 시대, 더욱 중요해지는 휴먼 리터러시' 교육을 아래와 같이 진행하오니 많은 관심과 참여 부탁드립니다.\n※ 본 교육은 누리미디어(DBPIA)에서 주최하는 것으로 관련 문의는 포스터 하단 교육 문의 이메일로 연락주시기 바랍니다.\n※ 교육 신청은 포스터의 교육 일정별 QR 코드로 신청페이지에 접속하셔서 직접 신청해주세요.\n첨부파일 :\nDBpia 11월 온라인 교육_02.png [ 1.82854 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
-  "sub": "비교과·프로그램"
- },
- {
-  "id": "lib-NGRiMmU0MDJmQzYwMTFuYjY0ZUlDSjRGUlZpNjAxMkRBZg==",
-  "source": "official",
-  "board": "lib",
-  "host": "학술정보원",
-  "title": "DBpia 11월 온라인 교육 안내(DBpia & DBpia AI & Cit..",
-  "posted": "2026-11-05",
-  "campus": "\"_tscCmtKeyNum_\"",
-  "pinned": false,
-  "link": {
-   "url": "https://lib.eulji.ac.kr/eul/community/view.csp?sccode=eulnotice&scKey=NGRiMmU0MDJmQzYwMTFuYjY0ZUlDSjRGUlZpNjAxMkRBZg%3D%3D",
-   "method": "GET"
-  },
-  "text": "누리미디어에서 DBPIA 11월 온라인 교육으로 'DBpia & DBpia AI & Citeasy' 교육을 아래와 같이 진행하오니 많은 관심과 참여 부탁드립니다.\n※ 본 교육은 누리미디어(DBPIA)에서 주최하는 것으로 관련 문의는 포스터 하단 교육 문의 이메일로 연락주시기 바랍니다.\n※ 교육 신청은 포스터의 교육 일정별 QR 코드로 신청페이지에 접속하셔서 직접 신청해주세요.\n첨부파일 :\nDBpia 11월 온라인 교육_01.png [ 2.92562 MB ]\n| [다운로드] - 마우스 오른쪽 클릭 후 '다른 이름으로 대상 저장'",
   "sub": "비교과·프로그램"
  },
  {
