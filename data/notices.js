@@ -1,6 +1,6 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-25T18:55:01.827Z";
-window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":3},"intl":{"ok":true,"count":10},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":5},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":8},"lib":{"ok":true,"count":7}};
+window.CRAWLED_AT = "2026-11-26T06:35:25.532Z";
+window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":3},"intl":{"ok":true,"count":10},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":5},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":7},"lib":{"ok":true,"count":7}};
 window.CRAWLED = [
  {
   "id": "ctl-152",
@@ -1670,30 +1670,6 @@ window.CRAWLED = [
    }
   ],
   "sub": "공모전"
- },
- {
-  "id": "acad-1082",
-  "source": "official",
-  "board": "acad",
-  "host": "학사 공지",
-  "title": "2026학년도 2학기 추가학기 관련 안내",
-  "posted": "2026-08-28",
-  "pinned": false,
-  "link": {
-   "url": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
-   "method": "POST",
-   "fields": {
-    "act": "view",
-    "bbsno": "1082",
-    "siteno": "194",
-    "no": "568",
-    "page": "1",
-    "ztag": "rO0ABXQAMTxjYWxsIHR5cGU9ImJvYXJkIiBubz0iNTY4IiBza2luPSJub3RpY2UiPjwvY2FsbD4="
-   }
-  },
-  "list": "https://eulji.ac.kr/renewal/index.html?menuno=3160",
-  "text": "",
-  "sub": "학사"
  },
  {
   "id": "innov-1324",
