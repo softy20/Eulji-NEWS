@@ -1,5 +1,5 @@
 // 자동 생성 파일 — node crawler/crawl.mjs 로 갱신해요. 직접 고치지 마세요.
-window.CRAWLED_AT = "2026-11-27T06:25:40.298Z";
+window.CRAWLED_AT = "2026-11-27T18:36:14.245Z";
 window.CRAWL_STATUS = {"job":{"ok":true,"count":9},"ctl":{"ok":true,"count":3},"intl":{"ok":true,"count":10},"counsel":{"ok":true,"count":13},"innov":{"ok":false,"error":"HTTP 404","count":9},"aac":{"ok":true,"count":5},"liberal":{"ok":true,"count":4},"acad":{"ok":true,"count":7},"lib":{"ok":true,"count":6}};
 window.CRAWLED = [
  {
@@ -623,7 +623,7 @@ window.CRAWLED = [
   "host": "진로취창업센터",
   "title": "EU 취업박람회 개최 안내",
   "posted": "2026-10-30",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://job.eulji.ac.kr/index.html?menuno=4371",
    "method": "POST",
@@ -1177,7 +1177,7 @@ window.CRAWLED = [
   "host": "진로취창업센터",
   "title": "[공지] [성남시청소년청년재단]청년창업 아이디에이션4.0 합격자 발표",
   "posted": "2026-09-15",
-  "pinned": true,
+  "pinned": false,
   "link": {
    "url": "https://job.eulji.ac.kr/index.html?menuno=4371",
    "method": "POST",
